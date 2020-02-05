@@ -10,7 +10,7 @@
  */
 int main(void)
 {
-	char *dora = {"and that piece of art is useful\" - Dora Korpar, 2
+	char *dora = {"and that piece of art is useful\" - Dora Korpar, 2\
 015-10-19\n"};
 	fwrite(dora, strlen(dora), 1, stderr);
 	return (1);

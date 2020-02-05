@@ -10,8 +10,10 @@
  */
 int main(void)
 {
-	char *dora = {"and that piece of art is useful\" - Dora Korpar, 2\
-015-10-19\n"};
-	fwrite(dora, strlen(dora), 1, stderr);
+	int l;
+	l = sizeof("and that piece of art is useful - Dora Korpar, 2015-10-19");
+	write(2,
+	      "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n",
+		l+1);
 	return (1);
 }

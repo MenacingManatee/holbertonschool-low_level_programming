@@ -5,7 +5,7 @@
 
 /**
  * main - Uses fwrite (unistd.h) and strlen (string.h) to print to stderr
- * without using any version of print or puts
+ * without using any version of banned commands
  * Return: always 1
  */
 int main(void)

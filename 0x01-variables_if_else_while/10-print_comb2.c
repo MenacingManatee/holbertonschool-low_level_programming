@@ -11,8 +11,7 @@ int main(void)
 	int num = 0;
 
 	do {
-		if (num > 10)
-			putchar((num / 10) + '0');
+		putchar((num / 10) + '0');
 		putchar((num % 10) + '0');
 		if (num < 99)
 		{

@@ -30,7 +30,8 @@ int main(void)
 					putchar(' ');
 					putchar((m1 % 10) + '0');
 					putchar((m2 % 10) + '0');
-					if ((n1 + n2 + m1 + m2) != 35)
+					if (((n1 + n2 + m1 + m2) != 35) ||
+					    (n1 != 9))
 					{
 						putchar(',');
 						putchar(' ');

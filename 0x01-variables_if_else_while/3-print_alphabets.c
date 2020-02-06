@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Uses only putchar as output to print the alphabet
+ * main - Uses only the single allowed function as output to print the alphabet
  * in lowercase, followed by uppercase.
  * Return: Always 0 (ok)
  */

@@ -13,32 +13,31 @@ int main(void)
 	int m2 = 0;
 	int minnum = 0;
 
-	for (n2 = 0; n2 < 10; n2++)
+	for (n1 = 0; n1 < 10; n1++)
 	{
-		for (m1 = n1; m1 < 10; m1++)
+		for (n2 = 0; n2 < 10; n2++)
 		{
-			if (m1 <= n1)
-				minnum = n2;
-			else
-				minnum = 0;
-			for (m2 = minnum; m2 < 10; m2++)
+			for (m1 = n1; m1 < 10; m1++)
 			{
-				if ((n1 < m1) || ((n2 < m2) && (n1 == m1)))
+				if (m1 <= n1)
+					minnum = n2;
+				else
+					minnum = 0;
+				for (m2 = minnum; m2 < 10; m2++)
 				{
-					putchar((n1 % 10) + '0');
-					putchar((n2 % 10) + '0');
-					putchar(' ');
-					putchar((m1 % 10) + '0');
-					putchar((m2 % 10) + '0');
+					if ((n1 < m1) || ((n2 < m2) &&
+							  (n1 == m1)))
+					{
+						putchar((n1 % 10) + '0');
+						putchar((n2 % 10) + '0');
+						putchar(' ');
+						putchar((m1 % 10) + '0');
+						putchar((m2 % 10) + '0');
 					if ((n1 != 9) || (n2 != 8))
 					{
 						putchar(',');
 						putchar(' ');
 					}
-					if (n2 == 9)
-					{
-						n1++;
-						n2 = 0;
 					}
 				}
 			}

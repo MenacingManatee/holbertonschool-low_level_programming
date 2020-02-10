@@ -1,17 +1,17 @@
-# Project Title
+# 0x02 functions, nested loops
 
 ## About / synopsis
-A short paragraph describing the project / repository
+Creates functtions that will be tested by calling a seperate main.c file
 
 ## Built With
 
-* [placeholder] - The language / framework / etc used
+* [c] - Betty style formatting
 
 ### Project contents
 
 | Project Title | Short Description |
 | --- | --- |
-|***|***|
+|0-holberton.c|Calls provided function _putchar to print string 'Holberton'|
 |***|***|
 |***|***|
 |***|***|

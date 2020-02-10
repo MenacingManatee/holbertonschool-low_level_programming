@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include "holbertonhead.h"
+#include "holberton.h"
 
 /**
  * main - prints holberton using _putchar
@@ -15,6 +13,6 @@ int main(void)
 
 	for (i = 0; i < leng; i++)
 		_putchar(holb[i]);
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }

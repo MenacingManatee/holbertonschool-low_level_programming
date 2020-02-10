@@ -1,12 +1,19 @@
 #include <stdio.h>
+#include "holbertonhead.h"
 
 /**
- * main - 
+ * main - prints the alphabet in lowercase using _putchar max twice
  *
  * Return: Always 0 (ok)
  */
-int main(void)
+void print_alphabet(void)
 {
-	
-	return (0);
+	int i = 'a';
+
+	while(i <= 'z')
+	{
+		_putchar(i);
+		i++;
+	}
+	_putchar('\n');
 }

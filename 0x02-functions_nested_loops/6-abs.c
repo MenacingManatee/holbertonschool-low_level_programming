@@ -1,12 +1,14 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * abs(int) - computes the absolute value of an integer
  *
- * Return: Always 0 (ok)
+ * Return: absolute value of input integer
  */
-int main(void)
+int _abs(int x)
 {
-	
-	return (0);
+	if (x >= 0)
+		return (x);
+	else
+		return (-x);
 }

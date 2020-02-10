@@ -1,12 +1,14 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * _isalpha - checks if the character is a letter
  *
- * Return: Always 0 (ok)
+ * Return: 1 if a letter, 0 otherwise
  */
-int main(void)
+int _isalpha(int c)
 {
-	
-	return (0);
+	if ((c >= 'A') && (c <= 'z'))
+		return (1);
+	else
+		return (0);
 }

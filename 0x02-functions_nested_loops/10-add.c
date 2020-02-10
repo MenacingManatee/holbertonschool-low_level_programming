@@ -1,12 +1,11 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * add - add two integers
  *
- * Return: Always 0 (ok)
+ * Return: Value of two integers added
  */
-int main(void)
+int add(int a, int b)
 {
-	
-	return (0);
+	return (a + b);
 }

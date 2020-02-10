@@ -1,12 +1,24 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * jack_bauer - prints every minute of a day
  *
- * Return: Always 0 (ok)
+ * Return: none
  */
-int main(void)
+void jack_bauer(void)
 {
-	
-	return (0);
+	int hours, mins = 0;
+
+	for (hours = 0; hours < 24; hours++)
+	{
+		for (mins = 0; mins < 60; mins++)
+		{
+			_putchar((hours / 10) + '0');
+			_putchar((hours % 10) + '0');
+			_putchar(':');
+			_putchar((mins / 10) + '0');
+			_putchar((mins % 10) + '0');
+			_putchar('\n');
+		}
+	}
 }

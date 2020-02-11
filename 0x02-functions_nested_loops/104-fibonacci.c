@@ -39,9 +39,9 @@ int main(void)
 			fib2a++;
 		}
 		if (i != 97)
-			printf("%lu%lu, ", fib2a, fib2b);
+			printf("%lu%06lu, ", fib2a, fib2b);
 		else
-			printf("%lu%lu\n", fib2a, fib2b);
+			printf("%lu%06lu\n", fib2a, fib2b);
 	}
 	return (0);
 }

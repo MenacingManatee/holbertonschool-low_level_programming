@@ -1,16 +1,4 @@
 #include "holberton.h"
-#define SEPERATE {\
-	_putchar(',');\
-	_putchar(' ');\
-	}
-#define PUTBIG {\
-	_putchar((n / 100) + '0');\
-	_putchar(((n % 100) / 10) + '0');\
-	}
-#define PUT(z) {\
-	_putchar((z * (n / 10)) + '0');\
-	_putchar((z * (n % 10)) + '0');\
-	}
 /**
  * print_to_98 - prints numbers n-98, seperated by a comma
  * @n: a number provided by the user to count from
@@ -22,43 +10,17 @@ void print_to_98(int n)
 	if (n >= 98)
 		for (; n >= 98; n--)
 		{
-			if (n >= 100)
-			{
-				PUTBIG;
-			}
+			if (n == 98)
+				printf("%d\n", n);
 			else
-				_putchar(((n % 100) / 10) + '0');
-			_putchar((n % 10) + '0');
-			if (n != 98)
-			{
-				SEPERATE;
-			}
-			else
-				_putchar('\n');
+				printf("%d, ", n);
 		}
 	else
-		for (; n <= 98; n++)
+		for (; n < 98; n++)
 		{
-			if (n >= 10)
-			{
-				PUT(1);
-			}
-			else if (n < 0)
-			{
-				_putchar('-');
-				if (n <= -10)
-				{
-					PUT(-1);
-				}
-				else
-					_putchar((-(n % 10)) + '0');
-			}
+			if (n == 98)
+				printf("%d\n", n);
 			else
-				_putchar((n % 10) + '0');
-			if (n != 98)
-			{
-				SEPERATE;
-			}
-			else
-				_putchar('\n');
-		}}
+				printf("%d, ", n);
+		}
+}

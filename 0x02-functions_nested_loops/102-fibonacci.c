@@ -12,13 +12,14 @@ int main(void)
 	int i;
 	unsigned long tmp;
 
-	printf("%lu\n%lu\n", lst, crnt);
-	for (i = 0; i <= 46; i++)
+	printf("%lu, %lu, ", lst, crnt);
+	for (i = 0; i <= 45; i++)
 	{
 		tmp = crnt + lst;
 		lst = crnt;
 		crnt = tmp;
-		printf("%lu\n", crnt);
+		printf("%lu, ", crnt);
 	}
+	printf("%lu\n", (crnt + lst));
 	return (0);
 }

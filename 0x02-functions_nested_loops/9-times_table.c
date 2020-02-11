@@ -10,14 +10,13 @@
  */
 void times_table(void)
 {
-	int l, h = 0;
-	int multi;
+	int l = 0, h = 0, multi = 0;
 
 	for (h = 0; h < 10; h++)
 	{
 		for (l = 0; l < 10; l++)
 		{
-			multi = l * h;
+			multi = (l * h);
 			if (multi >= 10)
 			{
 				SEPERATE;
@@ -31,7 +30,7 @@ void times_table(void)
 					SEPERATE;
 					_putchar(' ');
 				}
-				_putchar(l + '0');
+				_putchar(multi + '0');
 			}
 		}
 		_putchar('\n');

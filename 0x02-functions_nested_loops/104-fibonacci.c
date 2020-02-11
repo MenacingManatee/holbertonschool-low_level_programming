@@ -25,7 +25,7 @@ int main(void)
 	fib1b = fib1 % 1000000;
 	fib2a = fib2 / 1000000;
 	fib2b = fib2 % 1000000;
-	for (; i <= 97; i++)
+	for (; i <= 95; i++)
 	{
 		tmp = fib1a + fib2a;
 		tmp2 = fib1b + fib2b;
@@ -38,7 +38,7 @@ int main(void)
 			fib2b = fib2b % 1000000;
 			fib2a++;
 		}
-		if (i != 97)
+		if (i != 95)
 			printf("%lu%06lu, ", fib2a, fib2b);
 		else
 			printf("%lu%06lu\n", fib2a, fib2b);

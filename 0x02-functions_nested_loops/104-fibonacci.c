@@ -22,7 +22,7 @@ int main(void)
 	}
 	fib1 /= 10000;
 	fib2 /= 10000;
-	for (; i <= 95; i++)
+	for (; i <= 97; i++)
 	{
 		tmp = fib1 + fib2;
 		fib1 = fib2;

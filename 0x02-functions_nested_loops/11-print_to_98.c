@@ -1,4 +1,5 @@
-#include "holberton.h"
+#include <stdio.h>
+
 /**
  * print_to_98 - prints numbers n-98, seperated by a comma
  * @n: a number provided by the user to count from

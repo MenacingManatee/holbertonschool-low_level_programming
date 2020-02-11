@@ -13,7 +13,7 @@ int main(void)
 	unsigned long tmp;
 
 	printf("%lu, %lu, ", lst, crnt);
-	for (i = 0; i <= 47; i++)
+	for (i = 0; i <= 50; i++)
 	{
 		tmp = crnt + lst;
 		lst = crnt;

@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * main - prints the alphabet in lowercase using _putchar max twice
+ * print_alphabet - prints the alphabet in lowercase using _putchar max twice
  *
  * Return: Always 0 (ok)
  */

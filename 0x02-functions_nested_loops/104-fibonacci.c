@@ -22,12 +22,12 @@ int main(void)
 	}
 	fib1 /= 10000;
 	fib2 /= 10000;
-	for (; i < 99; i++)
+	for (; i <= 94; i++)
 	{
 		tmp = fib1 + fib2;
 		fib1 = fib2;
 		fib2 = tmp;
-		if (i != 98)
+		if (i != 94)
 			printf("%.0Lf, ", (fib2 * 10000));
 		else
 			printf("%.0Lf\n", (fib2 * 10000));

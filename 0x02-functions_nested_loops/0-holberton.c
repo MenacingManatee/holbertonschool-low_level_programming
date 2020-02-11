@@ -8,6 +8,7 @@
 int main(void)
 {
 	int i;
+
 	char holb[] = "Holberton";
 	int leng = sizeof(holb);
 

@@ -10,12 +10,7 @@ int print_last_digit(int x)
 	int l;
 
 	if (x < 0)
-		if (x < -99)
-			l = ((-x % 10) / 10);
-		else
-			l = (-x % 10);
-	else if (x > 99)
-		l = ((x % 10) / 10);
+		l = (-x % 10);
 	else
 		l = (x % 10);
 	_putchar(l + '0');

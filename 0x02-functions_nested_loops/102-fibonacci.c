@@ -7,10 +7,10 @@
  */
 int main(void)
 {
-	long unsigned int crnt = 2;
-	long unsigned int lst = 1;
+	unsigned long crnt = 2;
+	unsigned long lst = 1;
 	int i;
-	long unsigned int tmp;
+	unsigned long tmp;
 
 	printf("%lu\n%lu\n", lst, crnt);
 	for (i = 0; i <= 46; i++)

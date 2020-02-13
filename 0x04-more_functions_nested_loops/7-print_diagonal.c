@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_diaagonal - prints a diagonal line
+ * print_diagonal - prints a diagonal line
  *@n: number of lines
  * Return: void
  */

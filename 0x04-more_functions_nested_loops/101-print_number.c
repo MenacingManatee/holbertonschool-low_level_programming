@@ -8,7 +8,7 @@
 void print_number(int n)
 {
 	int i = 0, j = n, k;
-	unsigned x = 10;
+	unsigned int x = 10;
 
 	for (; j; i++)
 	{
@@ -27,7 +27,7 @@ void print_number(int n)
 	if (i != 0)
 	{
 		k = i;
-		for(; k - 2; k--)
+		for (; k - 2; k--)
 			x = x * 10;
 		for (; i != 0; i--)
 		{

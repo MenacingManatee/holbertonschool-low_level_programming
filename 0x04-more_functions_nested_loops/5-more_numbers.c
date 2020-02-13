@@ -1,12 +1,24 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * more_numbers - prints 0-14 10 times
  *
- * Return: Always 0 (ok)
+ * Return: void
  */
-int main(void)
+void more_numbers(void)
 {
-	
-	return (0);
+	int count, i;
+
+	for (count = 0; count < 10; count++)
+	{
+		for (i = 0; i <= 14; i++)
+		{
+			if (i >= 10)
+			{
+				_putchar((i / 10) + '0');
+			}
+			_putchar((i % 10) + '0');
+		}
+		_putchar('\n');
+	}
 }

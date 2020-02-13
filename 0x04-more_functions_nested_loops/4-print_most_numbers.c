@@ -1,12 +1,16 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * print_most_numbers - prints 0-9, skipping 2 and 4
  *
- * Return: Always 0 (ok)
+ * Return: void
  */
-int main(void)
+void print_most_numbers(void)
 {
-	
-	return (0);
+	int i;
+
+	for (i = 0; i < 10; i++)
+		if ((i != 2) && (i != 4))
+			_putchar(i + '0');
+	_putchar('\n');
 }

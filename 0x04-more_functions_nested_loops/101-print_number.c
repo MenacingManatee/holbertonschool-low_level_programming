@@ -15,20 +15,12 @@ void print_number(int n)
 	{
 		j = j / 10;
 	}
-	if (n <= 0)
+	if (n < 0)
 	{
-		if (n == 0)
-		{
-			_putchar('0');
-			return;
-		}
-		else
-		{
-			_putchar('-');
-			n = neg;
-		}
+		_putchar('-');
+		n = neg;
 	}
-	else if (n < 10)
+	if ((n < 10) && (n > -10))
 	{
 		_putchar(n + '0');
 		return;

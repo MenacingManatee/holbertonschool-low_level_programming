@@ -1,12 +1,23 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * print_diaagonal - prints a diagonal line
+ *@n: number of lines
+ * Return: void
  */
-int main(void)
+void print_diagonal(int n)
 {
-	
-	return (0);
+	int space, i;
+
+	for (i = 0; i < n; i++)
+	{
+		for (space = 0; space < i; space++)
+		{
+			_putchar(' ');
+		}
+		_putchar('\\');
+		_putchar('\n');
+	}
+	if (n <= 0)
+		_putchar('\n');
 }

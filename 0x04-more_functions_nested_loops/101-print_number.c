@@ -9,6 +9,7 @@ void print_number(int n)
 {
 	int i = 0, j = n, k;
 	unsigned int x = 10;
+	unsigned neg = -n;
 
 	for (; j; i++)
 	{
@@ -22,7 +23,10 @@ void print_number(int n)
 			return;
 		}
 		else
+		{
 			_putchar('-');
+			n = neg;
+		}
 	}
 	if (i != 0)
 	{

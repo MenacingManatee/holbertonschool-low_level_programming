@@ -1,12 +1,15 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * print_line - prints a line of underscores
  *
- * Return: Always 0 (ok)
+ * Return: void
  */
-int main(void)
+void print_line(int n)
 {
-	
-	return (0);
+	int i;
+
+	for (i = 0; i < n; i++)
+		_putchar('_');
+	_putchar('\n');
 }

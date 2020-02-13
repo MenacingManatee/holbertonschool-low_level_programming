@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_square
+ * print_square - prints an ascii art square
  *@size: size of the square
  * Return: Always 0 (ok)
  */

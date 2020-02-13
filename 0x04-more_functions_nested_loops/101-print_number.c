@@ -9,7 +9,7 @@ void print_number(int n)
 {
 	int i = 0, j = n, k;
 	unsigned int x = 10;
-	unsigned neg = -n;
+	unsigned int neg = -n;
 
 	for (; j; i++)
 	{
@@ -28,15 +28,17 @@ void print_number(int n)
 			n = neg;
 		}
 	}
-	if (i != 0)
+	else if (n < 10)
 	{
-		k = i;
-		for (; k - 2; k--)
-			x = x * 10;
-		for (; i != 0; i--)
-		{
-			_putchar(((n / x) % 10) + '0');
-			x = x / 10;
-		}
+		_putchar(n + '0');
+		return;
+	}
+	k = i;
+	for (; k - 2; k--)
+		x = x * 10;
+	for (; i != 0; i--)
+	{
+		_putchar(((n / x) % 10) + '0');
+		x = x / 10;
 	}
 }

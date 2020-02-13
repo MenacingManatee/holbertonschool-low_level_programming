@@ -1,12 +1,15 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * print_numbers - prints 0-9, followed by a newline. Uses putchar twice.
  *
- * Return: Always 0 (ok)
+ * Return: Void
  */
-int main(void)
+void print_numbers(void)
 {
-	
-	return (0);
+	int i;
+
+	for (i = 0; i < 10; i++)
+		_putchar(i + '0');
+	_putchar('\n');
 }

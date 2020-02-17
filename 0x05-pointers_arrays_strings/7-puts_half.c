@@ -1,12 +1,20 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * puts_half - prints the second half of a string
+ *@str: string provided by user
+ * Return: void
  */
-int main(void)
+void puts_half(char *str)
 {
-	
-	return (0);
+	int i = 0, half;
+
+	while (str[i] != '\0')
+		i++;
+	half = i / 2;
+	if (i % 2 != 0)
+		half++;
+	for (; half < i; half++)
+		_putchar(str[half]);
+	_putchar('\n');
 }

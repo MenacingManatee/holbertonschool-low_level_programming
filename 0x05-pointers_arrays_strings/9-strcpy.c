@@ -1,12 +1,18 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * *_strcpy - copies a string to *dest
+ *@dest: Pointer to copy string to
+ *@src: string to copy
+ * Return: *dest
  */
-int main(void)
+char *_strcpy(char *dest, char *src)
 {
-	
-	return (0);
+	int i = 0, j;
+
+	while (src[i] != '\0')
+		i++;
+	for (j = 0; j < i; j++)
+		dest[j] = src[j];
+	return (dest);
 }

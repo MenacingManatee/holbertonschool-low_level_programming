@@ -1,12 +1,20 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * print_rev - reverses a string sent by user
+ *@s: pointer to a string
+ * Return: void
  */
-int main(void)
+void print_rev(char *s)
 {
-	
-	return (0);
+	int i = 0;
+
+	while (s[i] != '\0')
+		i++;
+	while (i != 0)
+	{
+		_putchar(s[i - 1]);
+		i--;
+	}
+	_putchar('\n');
 }

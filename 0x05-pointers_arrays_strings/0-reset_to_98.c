@@ -1,12 +1,12 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * reset_to_98 - resets the variable pointed to by pointer n to 98
+ *@*n: variable pointer to an int
  *
- * Return: Always 0 (ok)
+ * Return: Void
  */
-int main(void)
+void reset_to_98(int *n)
 {
-	
-	return (0);
+	*n = 98;
 }

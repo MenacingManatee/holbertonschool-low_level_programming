@@ -1,12 +1,15 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * _strlen - returns the length of a string
+ * @*s - a string (pointer to the first letter) provided by user
+ * Return: string length
  */
-int main(void)
+int _strlen(char *s)
 {
-	
-	return (0);
+	int len;
+
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }

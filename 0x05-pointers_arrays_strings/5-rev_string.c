@@ -1,12 +1,27 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * rev_string - reverses a string
+ *@s: string sent by user
+ * Return: void
  */
-int main(void)
+void rev_string(char *s)
 {
-	
-	return (0);
+	int i = 0, j = 0, k, arr[90];
+
+	while (s[i] != '\0')
+		i++;
+	k = i;
+	while ((i != 0) && (s[j] != '\0'))
+	{
+		arr[i] = s[j];
+		j++;
+		i--;
+	}
+	i = 0;
+	while ((arr[i] != '\0') && (i < k))
+	{
+		s[i] = arr[i + 1];
+		i++;
+	}
 }

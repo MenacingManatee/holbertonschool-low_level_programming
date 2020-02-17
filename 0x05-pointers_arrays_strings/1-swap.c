@@ -1,12 +1,16 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * swap_int - swaps the values of two ints using pointers
+ * @*a: pointer to int a
+ * @*b: pointer to int b
+ * Return: void
  */
-int main(void)
+void swap_int(int *a, int *b)
 {
-	
-	return (0);
+	int tmp;
+
+	tmp = *b;
+	*b = *a;
+	*a = tmp;
 }

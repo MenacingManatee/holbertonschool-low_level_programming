@@ -1,12 +1,18 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * _puts - prints a string to stdout
+ *@*str - string sent by user to be printed
+ * Return: void
  */
-int main(void)
+void _puts(char *str)
 {
-	
-	return (0);
+	int i = 0;
+
+	while(str[i] != '\0')
+	{
+		_putchar(str[i]);
+		i++;
+	}
+	_putchar('\n');
 }

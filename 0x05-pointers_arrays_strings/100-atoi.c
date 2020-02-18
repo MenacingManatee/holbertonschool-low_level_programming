@@ -15,12 +15,12 @@ int _atoi(char *s)
 	{
 		if (s[j] == '-')
 		{
-			neg += 1;
+			neg -= 1;
 			continue;
 		}
 		else if (s[j] == '+')
 		{
-			neg -= 1;
+			neg += 1;
 			continue;
 		}
 		else if ((s[j] >= '0') && (s[j] <= '9'))

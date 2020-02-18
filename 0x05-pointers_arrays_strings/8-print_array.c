@@ -9,16 +9,13 @@
  */
 void print_array(int *a, int n)
 {
-	int size, dig, i;
-	int arr[2000];
+	int num;
 
-	arr[0] = a[0];
-	for (i = 1; arr[i - 1] != '\0'; i++)
-		arr[i] = a[i];
-	size = i - 2;
-	dig = size - (n - 1);
-	printf("%d", a[dig]);
-	for (; dig < size; dig++)
-		printf(", %d", a[dig + 1]);
+	for (num = 0; num < n; num++)
+	{
+		printf("%d", a[num]);
+		if (num != n - 1)
+			printf(", ");
+	}
 	printf("\n");
 }

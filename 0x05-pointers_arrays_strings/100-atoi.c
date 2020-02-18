@@ -38,7 +38,7 @@ int _atoi(char *s)
 		else if ((sum != 0) && (i > 1))
 			break;
 	}
-	if (neg != 0)
+	if (neg < 0)
 		sum = -sum;
 	return (sum);
 }

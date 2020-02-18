@@ -34,10 +34,8 @@ int _atoi(char *s)
 		}
 		else if (s[j] == ' ')
 			continue;
-		else if ((sum != 0) && (i > 1))
+		else if ((sum != 0) && (!(s[j] >= '0') || !(s[j] <= '9')))
 			break;
-		else
-			continue;
 	}
 	return (sum * neg);
 }

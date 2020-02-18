@@ -36,6 +36,8 @@ int _atoi(char *s)
 			continue;
 		else if ((sum != 0) && (i > 1))
 			break;
+		else
+			continue;
 	}
 	return (sum * neg);
 }

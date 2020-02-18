@@ -7,7 +7,7 @@
  */
 int _atoi(char *s)
 {
-	int i = 0, j, n1, n2, sum = 0, neg = 1;
+	int i = 0, j, n1, n2, sum = 0, neg = 1, flag = 0;
 
 	while (s[i] != '\0')
 		i++;
@@ -30,11 +30,12 @@ int _atoi(char *s)
 				n2 = n1;
 			}
 			sum += s[j] - '0';
+			flag = 1;
 			n1++;
 		}
 		else if (s[j] == ' ')
 			continue;
-		else if ((sum != 0) && (!(s[j] >= '0') || !(s[j] <= '9')))
+		else if ((flag == 1) && (!(s[j] >= '0') || !(s[j] <= '9')))
 			break;
 	}
 	return (sum * neg);

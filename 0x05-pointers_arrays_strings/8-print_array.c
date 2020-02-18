@@ -9,9 +9,13 @@
  */
 void print_array(int *a, int n)
 {
-	int size, dig;
+	int size, dig, i;
+	int arr[2000];
 
-	size = (sizeof(a) / 2);
+	arr[0] = a[0];
+	for (i = 1; arr[i - 1] != '\0'; i++)
+		arr[i] = a[i];
+	size = i - 2;
 	dig = size - (n - 1);
 	printf("%d", a[dig]);
 	for (; dig < size; dig++)

@@ -31,5 +31,7 @@ int main(void)
 	}
 	gap = 2772 - sum;
 	pass[i] = gap;
-	return (*pass);
+	sum += gap;
+	printf("%s", pass);
+	return (0);
 }

@@ -6,22 +6,30 @@
 /**
  * main - generates random valid passwords
  *
- * Return: Always 0 (ok)
+ * Return: Generated password
  */
-char * main(void)
+int main(void)
 {
-	int i;
-	char *chars[] = {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"};
-	char *pass[100];
-	int num = rand() % 99;
+	int i, sum = 0, num;
+	char chars[100] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+	char pass[200];
+	char gap;
 
 	srand(time(0));
 
-	for (i = 0; i < num; i++)
+	for (i = 0; sum < (2772 - 'z');)
 	{
-		pass[i] = chars[(rand() % 62)];
+		num = rand() % 62;
+		if (sum + chars[num] >= 2772)
+			continue;
+		else
+		{
+			pass[i] = chars[num];
+			sum += pass[i];
+			i++;
+		}
 	}
-	printf("%s", *pass);
-	putchar('\n');
+	gap = 2772 - sum;
+	pass[i] = gap;
 	return (*pass);
 }

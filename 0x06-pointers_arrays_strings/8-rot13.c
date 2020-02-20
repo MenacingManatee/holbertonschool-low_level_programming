@@ -7,18 +7,20 @@
  */
 char *rot13(char *s)
 {
-	int i = 0, n;
-	char chars[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char rot[52] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int n, i;
+	char chars[60] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot[60] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	while (s[i])
+	for (i = 0; *s != '\0'; s++, i++)
 	{
-		for (n = 0; n < 52; n++)
+		for (n = 0; chars[n] != '\0'; n++)
 		{
-			if (s[i] == chars[n])
-				s[i] = rot[n];
+			if (chars[n] == *s)
+			{
+				*s = rot[n];
+				break;
+			}
 		}
-		i++;
 	}
 	return (s);
 }

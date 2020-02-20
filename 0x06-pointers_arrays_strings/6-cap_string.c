@@ -18,7 +18,7 @@ char *cap_string(char *s)
 			flag = 0;
 			s[n] = s[n] - ('a' - 'A');
 		}
-		else if ((s[n] == ' ') || (s[n] == '\n') || (s[n] == '\t') ||\
+		else if ((s[n] == ' ') || (s[n] == '\n') || (s[n] == '\t') ||
 			 (s[n] == '.'))
 			flag = 1;
 		else

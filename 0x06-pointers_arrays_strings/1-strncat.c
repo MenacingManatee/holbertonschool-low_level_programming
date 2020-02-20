@@ -1,12 +1,25 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * _strncat - concatenates up to n bytes of a string
+ *@dest: destination pointer
+ *@src: source string
+ *@n: bytes to copy
+ * Return: dest pointer
  */
-int main(void)
+char *_strncat(char *dest, char *src, int n)
 {
-	
-	return (0);
+	int i = 0, num = 0, len;
+
+	while (dest[i])
+		i++;
+	while (src[num])
+		num++;
+	len = i + num;
+
+	for (num = 0; (i < len) && (num < n); num++, i++)
+	{
+		dest[i] = src[num];
+	}
+	return (dest);
 }

@@ -11,13 +11,13 @@ char *rot13(char *s)
 	char chars[60] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot[60] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	for (i = 0; *s != '\0'; s++, i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (n = 0; chars[n] != '\0'; n++)
 		{
-			if (chars[n] == *s)
+			if (chars[n] == s[i])
 			{
-				*s = rot[n];
+				s[i] = rot[n];
 				break;
 			}
 		}

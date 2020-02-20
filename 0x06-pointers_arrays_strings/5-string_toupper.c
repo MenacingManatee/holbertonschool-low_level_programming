@@ -1,12 +1,18 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * string_toupper - replaces all lowercase letters with uppercase
+ *@s: string to replace lowercase from
+ * Return: char string
  */
-int main(void)
+char *string_toupper(char *s)
 {
-	
-	return (0);
+	int i, n;
+
+	while (s[i])
+		i++;
+	for (n = 0; n < i; n++)
+		if ((s[n] >= 'a') && (s[n] <= 'z'))
+			s[n] -= ('a' - 'A');
+	return (s);
 }

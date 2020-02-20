@@ -1,12 +1,27 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * leet - encodes a string into 1337sp34k
+ *@s: string to be encoded
+ * Return: string s
  */
-int main(void)
+char *leet(char *s)
 {
-	
-	return (0);
+	int i;
+
+	while (s[i])
+	{
+		if (s[i] == 'a' || s[i] == 'A')
+			s[i] = '4';
+		else if (s[i] == 'e' || s[i] == 'E')
+			s[i] = '3';
+		else if (s[i] == 'o' || s[i] == 'O')
+			s[i] = '0';
+		else if (s[i] == 't' || s[i] == 'T')
+			s[i] = '7';
+		else if (s[i] == 'l' || s[i] == 'L')
+			s[i] = '1';
+		i++;
+	}
+	return (s);
 }

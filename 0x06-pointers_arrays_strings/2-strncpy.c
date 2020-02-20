@@ -1,12 +1,24 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * _strncpy - copies up to n bytes of a string
+ *@dest: destination pointer
+ *@src: source string
+ *@n: bytes to copy
+ * Return: dest pointer
  */
-int main(void)
+char *_strncpy(char *dest, char *src, int n)
 {
-	
-	return (0);
+	int num = 0, j;
+
+	while (src[num])
+		num++;
+	for (j = 0; j < n; j++)
+	{
+		if (j > num)
+			dest[j] = '\0';
+		else
+			dest[j] = src[j];
+	}
+	return (dest);
 }

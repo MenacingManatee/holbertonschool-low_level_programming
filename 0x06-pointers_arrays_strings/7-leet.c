@@ -16,7 +16,7 @@ char *leet(char *s)
 		for (n = 0; n < 11; n++)
 		{
 			if (s[i] == chars[n])
-			    s[i] = leet[n];
+				s[i] = leet[n];
 		}
 		i++;
 	}

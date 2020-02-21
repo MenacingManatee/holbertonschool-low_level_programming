@@ -19,14 +19,6 @@ void print_buffer(char *b, int size)
 		for (i = 0; (i * 10) < size; i++)
 		{
 			mod = i * 10;
-			while (n < size - 2)
-			{
-				if (b[n] == '\0' || b[n] <= 31)
-				{
-					b[n] = '.';
-				}
-				n++;
-			}
 			printf("%08x: ", mod);
 			for (n = 0; n <= 10; n++)
 			{
@@ -43,9 +35,13 @@ void print_buffer(char *b, int size)
 			{
 				if (n + mod >= size)
 					break;
-				putchar(b[n + mod]);
+				if (b[n + mod] <= 31 && b[n + mod] >= '\0')
+					putchar('.');
+				else
+					putchar(b[n + mod]);
 			}
-			putchar('\n');
+			if (i < 13)
+				putchar('\n');
 		}
 	}
 }

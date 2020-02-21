@@ -29,8 +29,7 @@ void print_buffer(char *b, int size)
 				else
 					printf("%.2x", b[n + mod]);
 			}
-			if (i < 14)
-				putchar(' ');
+			putchar(' ');
 			for (n = 0; n < 10; n++)
 			{
 				if (n + mod >= size)
@@ -40,8 +39,7 @@ void print_buffer(char *b, int size)
 				else
 					putchar(b[n + mod]);
 			}
-			if (i < 13)
-				putchar('\n');
+			putchar('\n');
 		}
 	}
 }

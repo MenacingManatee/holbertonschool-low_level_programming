@@ -1,5 +1,6 @@
 #include "holberton.h"
-#include <stdio.h>
+
+int _strlen(char *a);
 /**
  * infinite_add - converts two strings to integers and adds them.
  * @n1: First string to add
@@ -10,16 +11,13 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int k, i, j, sum = 0, carry = 0, l = 0;
+	int k = 0, i, j, sum = 0, carry = 0, l = 0;
 	unsigned int num1, num2;
 
 	r[0] = '\0';
 	r[1] = '\0';
-	i = 0, j = 0, k = 0;
-	while (n1[i])
-		i++;
-	while (n2[j])
-		j++;
+	i = _strlen(n1);
+	j = _strlen(n2);
 	if (i + 2 > size_r || j + 2 > size_r)
 		return (0);
 	if (i > j)
@@ -57,9 +55,23 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	if (carry > 0)
 		r[0] = '1';
-	if (k == 0)
-		r[k] = '\0';
+	else
+		r[0] = '\0';
 	while (r[l] == '\0')
 		l++;
 	return (r + l);
+}
+/**
+ * _strlen - finds the length of a string
+ * @a: string to find length of
+ *
+ * Return: length
+ */
+int _strlen(char *a)
+{
+	int i = 0;
+
+	while (a[i])
+		i++;
+	return (i);
 }

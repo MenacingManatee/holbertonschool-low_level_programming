@@ -20,7 +20,7 @@ void print_buffer(char *b, int size)
 		{
 			mod = i * 10;
 			printf("%08x: ", mod);
-			for (n = 0; n <= 10; n++)
+			for (n = 0; n < 10; n++)
 			{
 				if (n % 2 == 0 && n != 0)
 					printf(" ");

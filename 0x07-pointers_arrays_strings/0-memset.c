@@ -1,12 +1,19 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * _memset - fills first n bytes with constant b
+ * @s: location to fill
+ * @b: what to fill location with
+ * @n number of bytes to fill
+ * Return: pointer to s
  */
-int main(void)
+char *_memset(char *s, char b, unsigned int n)
 {
-	
-	return (0);
+	unsigned int i = 0;
+
+	for (; i < n; i++)
+	{
+		s[i] = b;
+	}
+	return (s);
 }

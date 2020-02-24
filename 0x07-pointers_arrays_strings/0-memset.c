@@ -4,7 +4,7 @@
  * _memset - fills first n bytes with constant b
  * @s: location to fill
  * @b: what to fill location with
- * @n number of bytes to fill
+ * @n: number of bytes to fill
  * Return: pointer to s
  */
 char *_memset(char *s, char b, unsigned int n)

@@ -1,12 +1,18 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * _strchr - locates a character in a string
+ * @s: source string
+ * @c: character to find
+ * Return: pointer to the character in s
  */
-int main(void)
+char *_strchr(char *s, char c)
 {
-	
-	return (0);
+	while (*s)
+	{
+		if (*s == c)
+			break;
+		s++;
+	}
+	return (s);
 }

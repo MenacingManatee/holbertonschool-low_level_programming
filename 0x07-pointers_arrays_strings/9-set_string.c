@@ -8,15 +8,5 @@
  */
 void set_string(char **s, char *to)
 {
-	int i = 0, j = 0;
-
-	while (to[j])
-		j++;
-	while (i <= j)
-	{
-		printf("%c, %c\n", *(*s + i), to[i]);
-		*(s + i) = &to[i];
-		printf("%c, %c\n\n", *(*s + i), to[i]);
-		i++;
-	}
+	*s = to;
 }

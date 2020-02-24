@@ -8,7 +8,7 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i = 0;
+	int i = 0, f = 0;
 
 	while (*s)
 	{
@@ -16,12 +16,20 @@ char *_strpbrk(char *s, char *accept)
 		while (accept[i])
 		{
 			if (*s == accept[i])
+			{
+				f = 1;
 				break;
+			}
 			i++;
 		}
-		if (*s == accept[i])
+		if (f == 1)
+		{
 			break;
+		}
 		s++;
 	}
-	return (s);
+	if (f == 1)
+		return (s);
+	else
+		return ('\0');
 }

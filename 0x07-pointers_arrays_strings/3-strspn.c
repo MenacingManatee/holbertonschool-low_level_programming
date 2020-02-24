@@ -24,10 +24,10 @@ unsigned int _strspn(char *s, char *accept)
 			}
 			j++;
 		}
-		if (flag == 0)
-			break;
-		else
+		if (flag != 0)
 			flag = 0;
+		else
+			break;
 		i++;
 	}
 	return (i);

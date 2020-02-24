@@ -1,12 +1,32 @@
+#include "holberton.h"
 #include <stdio.h>
-
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * _strpbrk - finds the first occurrence of any byte in accept
+ * @s: source string
+ * @accept: bytes to search for
+ * Return: Pointer to first matching byte, or null byte
  */
-int main(void)
+char *_strpbrk(char *s, char *accept)
 {
-	
-	return (0);
+	int i = 0;
+
+	while (*s)
+	{
+		i = 0;
+		while(accept[i])
+		{
+			if (*s == accept[i])
+				break;
+			else
+				continue;
+			i++;
+			printf("%d\n", i);
+		}
+		if (*s == accept[i])
+			break;
+		else
+			s++;
+		printf("%c\n", *s);
+	}
+	return (s);
 }

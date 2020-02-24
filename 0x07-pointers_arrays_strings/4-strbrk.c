@@ -17,16 +17,11 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (*s == accept[i])
 				break;
-			else
-				continue;
 			i++;
-			printf("%d\n", i);
 		}
 		if (*s == accept[i])
 			break;
-		else
-			s++;
-		printf("%c\n", *s);
+		s++;
 	}
 	return (s);
 }

@@ -1,12 +1,15 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * _puts_recursion - prints a string, followed by a newline
+ * @s: String to print
+ * Return: void
  */
-int main(void)
+void _print_rev_recursion(char *s)
 {
-	
-	return (0);
+	if (*s != '\0')
+	{
+		_print_rev_recursion(s + 1);
+		_putchar(*s);
+	}
 }

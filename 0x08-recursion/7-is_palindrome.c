@@ -13,6 +13,7 @@ int is_palindrome(char *s)
 
 	len = _strlen(s) - 1;
 	check = checker(s, len, 0);
+	return (check);
 }
 /**
  * _strlen - gets the length of a string

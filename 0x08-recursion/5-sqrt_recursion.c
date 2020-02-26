@@ -16,7 +16,7 @@ int _sqrt_recursion(int n)
 /**
  * checker - checks for square root
  * @sqrt: the current square index
- * @ num: number to find the square of
+ * @num: number to find the square of
  *
  * Return: the square root of base, or -1 if one can't be found
  */

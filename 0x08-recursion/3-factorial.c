@@ -1,12 +1,20 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * factorial - returns the factorial of a number
+ * @n: number to find factorial of
  *
- * Return: Always 0 (ok)
+ * Return: factorial of int
  */
-int main(void)
+int factorial(int n)
 {
-	
-	return (0);
+	if (n < 0)
+		return (-1);
+	else if (n == 0)
+		return (1);
+	else
+	{
+		n *= factorial(n - 1);
+		return (n);
+	}
 }

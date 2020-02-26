@@ -1,12 +1,11 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
  * main - 
  *
  * Return: Always 0 (ok)
  */
-int main(void)
+int wildcmp(char *s1, char *s2)
 {
 	
-	return (0);
 }

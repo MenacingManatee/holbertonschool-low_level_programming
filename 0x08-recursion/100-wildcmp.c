@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 
+int skip(char *s);
 int _strlen(char *s);
 int checker(char *s1, char *s2);
 /**
@@ -27,19 +28,46 @@ int wildcmp(char *s1, char *s2)
  */
 int checker(char *s1, char *s2)
 {
-	if (*s1 == *s2)
+	int j = 0;
+
+	if (*s1 == *s2 && *s1)
+	{
 		return (1 + checker(s1 + 1, s2 + 1));
+	}
 	else if (*s1 != '\0' && *s2 == '*')
 	{
-		if (*(s1 + 1) == *(s2 + 1))
+
+		if (*(s2 + 1) == '*')
 		{
-			printf("s1: %c, s2: %c\n", *s1, *s2);
+			j = skip(s2);
+		}
+		if (*(s1 + 1) == *(s2 + 1 + j))
+		{
 			return (1 + checker(s1 + 1, s2 + 1));
+		}
+		else if (*s1 == *(s2 + 1 + j))
+		{
+			if ((checker(s1 + 1, s2 + j)) > 3)
+			{
+				return (1 + checker(s1 + 1, s2 + j));
+			}
+			else
+			{
+				return (1 + checker(s1 + 1, s2 + 2 + j));
+			}
 		}
 		else
 		{
-			printf("s1: %c, s2: %c\n", *s1, *s2);
-			return (1 + checker(s1 + 1, s2));
+			return (1 + checker(s1 + 1, s2 + j));
+		}
+	}
+	else if (*s1 == '\0' && *s2)
+	{
+		j = skip(s2);
+		s2++;
+		if (*(s2 + j) != '\0')
+		{
+			return (-2147483648);
 		}
 	}
 	return (0);
@@ -54,5 +82,19 @@ int _strlen(char *s)
 {
 	if (*s)
 		return (1 + _strlen(s + 1));
+	return (0);
+}
+/**
+ * skip - skips excessive wilds
+ * @s: string to skip through
+ * Return: the same string
+ */
+int skip(char *s)
+{
+	if (*s == '*' && *(s + 1) == '*')
+	{
+		s++;
+		return (1 + skip(s));
+	}
 	return (0);
 }

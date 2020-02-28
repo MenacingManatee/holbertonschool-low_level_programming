@@ -1,7 +1,7 @@
 # Low-Level Programming
 
 ## About / synopsis
-A short paragraph describing the project / repository
+This repo includes all (to date) repositories utilizing low level languages in programming, namely C. Bash and blog posts are occasionally used.
 
 ## Built With
 

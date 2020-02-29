@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
 	else
 	{
 		sum = strtol(argv[1], NULL, 10) * strtol(argv[2], NULL, 10);
-		printf("%s, %s\n", argv[1], argv[2]);
 		printf("%d\n", sum);
 		return (0);
 	}

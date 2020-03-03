@@ -1,12 +1,27 @@
-#include <stdio.h>
+#include <stdlib.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * _strdup - duplicates a string
+ * @str: string to duplicate
  *
- * Return: Always 0 (ok)
+ * Return: Null, or pointer to duplicated string
  */
-int main(void)
+char *_strdup(char *str)
 {
-	
-	return (0);
+	char *dupe;
+	int i;
+
+	if (*str == '\0')
+		return ('\0');
+	for (i = 0; str[i]; i++)
+		;
+	if ((char *)malloc(sizeof(char *) * i) != NULL)
+		dupe = (char *)malloc(sizeof(char *) * i);
+
+	for (i = 0; str[i]; i++)
+	{
+		dupe[i] = str[i];
+	}
+	return (dupe);
 }

@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "holberton.h"
-#include <stdio.h>
+
 /**
  * argstostr - concatenates all arguments in av
  * @ac: Size of av
@@ -24,7 +24,10 @@ char *argstostr(int ac, char **av)
 	n--;
 	cat = malloc((n) * sizeof(char) + ac);
 	if (cat == NULL)
+	{
+		free(cat)
 		return (NULL);
+	}
 	for (i = 0; i < ac; i++)
 	{
 		for (len = 0; av[i][len]; len++)

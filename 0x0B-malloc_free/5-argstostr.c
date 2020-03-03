@@ -41,5 +41,6 @@ char *argstostr(int ac, char **av)
 		m++;
 		cat[++k] = '\n';
 	}
+	cat[k + 1] = '\0';
 	return (cat);
 }

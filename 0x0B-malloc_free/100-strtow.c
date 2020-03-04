@@ -17,6 +17,8 @@ char **strtow(char *str)
 	if (str == NULL || *str == '\0')
 		return (NULL);
 	blank = word_count(str);
+	if (blank == 0)
+		return (NULL);
 	word = malloc(++blank  * sizeof(char *));
 	if (word == NULL)
 	{

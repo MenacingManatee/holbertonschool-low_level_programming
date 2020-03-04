@@ -93,8 +93,7 @@ int word_count(char *str)
 			{
 				i++;
 			}
-			if (str[i] != ' ' && str[i] != '\0')
-				num++;
+			num++;
 		}
 	}
 	return (num);

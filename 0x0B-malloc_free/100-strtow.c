@@ -12,14 +12,14 @@ int word_count(char *str);
 char **strtow(char *str)
 {
 	char **word;
-	int i, blank, len, j = 0, flag = 0, flag2 = 0;
+	int i, blank, len, j = 0, flag = 0, k = 0;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-	blank = word_count(str);
+	blank = word_count(str) + 1;
 	if (blank == 0)
 		return (NULL);
-	word = malloc(++blank  * sizeof(char *));
+	word = malloc(blank  * sizeof(char *));
 	if (word == 0)
 	{
 		free(word);
@@ -28,31 +28,25 @@ char **strtow(char *str)
 	for (i = 0, len = 0; str[len]; len++)
 	{
 		if (str[len] == ' ')
-		{
-			if (str[len + 1] == ' ')
-			{
-				flag = 1;
-				continue;
-			}
-			if (j != 0)
-			{
-				if (flag != 1 || flag2 == 1)
-					i++;
-				flag = 0;
-				word[i] = malloc(sizeof(char) * (j + 1));
-				flag2 = 1;
-				if (word[i] == NULL)
-				{
-					for (len = 0; len <= i; len++)
-						free(word[i]);
-					free(word);
-					return (NULL);
-				}
-				j = 0;
-			}
-		}
+			continue;
 		else
-			j++;
+		{
+			for (k = 0; str[len] != ' ' && str[len]; len++, k++)
+			{
+				;
+			}
+			word[i] = malloc(sizeof(char) * (k + 1));
+			if (word[i] == NULL)
+			{
+				for (len = 0; len <= i; len++)
+					free(word[i]);
+				free(word);
+				return (NULL);
+			}
+			i++;
+			if (str[len] == '\0')
+				break;
+		}
 	}
 	flag = 0;
 	for (i = 0, j = 0, len = 0; str[len]; len++)
@@ -76,7 +70,7 @@ char **strtow(char *str)
 		flag = 1;
 		j++;
 	}
-	word[++i] = NULL;
+	word[i + 1] = NULL;
 	return (word);
 }
 

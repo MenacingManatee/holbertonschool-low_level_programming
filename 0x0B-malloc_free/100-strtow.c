@@ -20,7 +20,7 @@ char **strtow(char *str)
 	if (blank == 0)
 		return (NULL);
 	word = malloc(++blank  * sizeof(char *));
-	if (word == NULL)
+	if (word == 0)
 	{
 		free(word);
 		return (NULL);

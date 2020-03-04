@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "holberton.h"
-#include <stdio.h>
 
 int word_count(char *str);
 /**

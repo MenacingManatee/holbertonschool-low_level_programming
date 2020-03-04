@@ -39,7 +39,7 @@ char **strtow(char *str)
 			if (word[i] == NULL)
 			{
 				for (len = 0; len <= i; len++)
-					free(word[i]);
+					free(word[len]);
 				free(word);
 				return (NULL);
 			}

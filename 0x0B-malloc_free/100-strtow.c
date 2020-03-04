@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "holberton.h"
-#include <stdio.h>
+
 int word_count(char *str);
 /**
  * strtow - makes an array of strings seperated into words

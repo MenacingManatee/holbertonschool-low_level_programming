@@ -12,7 +12,7 @@ int _atoi(char *s);
 int main(int argc, char *argv[])
 {
 	int i, j, len1, len2, multi = 1, multi2 = 1;
-	unsigned int num1, num2, res;
+	unsigned long num1, num2, res;
 
 	if (argc != 3)
 	{
@@ -35,18 +35,15 @@ int main(int argc, char *argv[])
 	{
 		multi *= 10;
 	}
-	num1 = (long)malloc(multi * sizeof(int));
 	len2 = _strlen(argv[2]);
 	for (i = 0; i < len2; i++)
 	{
 		multi2 *= 10;
 	}
-	num2 = (long)malloc(multi2 * sizeof(int));
 	num1 = _atoi(argv[1]);
 	num2 = _atoi(argv[2]);
-	res = (long)malloc((multi * multi2  * 1000) * sizeof(int));
 	res = num1 * num2;
-	printf("%u\n", res);
+	printf("%lu\n", res);
 	return (0);
 }
 /**

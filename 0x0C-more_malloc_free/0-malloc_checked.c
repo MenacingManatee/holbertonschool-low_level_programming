@@ -1,12 +1,19 @@
-#include <stdio.h>
+#include <stdlib.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * malloc_checked - allocates memory, on failure exits with code 98
+ * @b: size of area to malloc
+ * Return: Pointer to malloced memory
  */
-int main(void)
+void *malloc_checked(unsigned int b)
 {
-	
-	return (0);
+	void *mall;
+
+	mall = malloc(b);
+	if (mall == NULL)
+	{
+		exit(98);
+	}
+	return (mall);
 }

@@ -90,6 +90,12 @@ int _atoi(char *s)
 	}
 	return (sum * neg);
 }
+/**
+ * _strlen - finds the length of a string
+ * @a: input string
+ *
+ * Return: length of string a
+ */
 int _strlen(char *a)
 {
 	int i = 0;

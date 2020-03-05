@@ -1,12 +1,43 @@
-#include <stdio.h>
+#include <stdlib.h>
+#include "holberton.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * _realloc - reallocates a memory block to a new size, and copies the contents
+ * @ptr: pointer to reallocate
+ * @old_size: size of previous pointer
+ * @new_size: Size to reallocate to
+ * Return: Pointer to new memory address, or NULL on failure
  */
-int main(void)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	
-	return (0);
+	char *old = malloc(old_size);
+	char *new = malloc(new_size);
+	unsigned int i;
+
+	if (new_size == old_size)
+		return (ptr);
+	if (!new || !old)
+		return (NULL);
+	if (!ptr)
+	{
+		free (old);
+		free (ptr);
+		if (new_size == 0)
+			return (NULL);
+		return (new);
+	}
+	if (new_size == 0)
+	{
+		free (ptr);
+		return (NULL);
+	}
+	old = ptr;
+	for (i = 0; i < old_size && i < new_size; i++)
+	{
+		new[i] = old[i];
+	}
+	for (; i < old_size; i++)
+		new[i] = '\0';
+	free (ptr);
+	return (new);
 }

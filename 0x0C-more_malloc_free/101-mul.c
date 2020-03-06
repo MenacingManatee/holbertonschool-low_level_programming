@@ -153,6 +153,16 @@ char *multi(int *num1, int len1, int *num2, int len2)
 	mul = malloc((len1 + len2 + 2) * sizeof(char *));
 	c = malloc((len1 + len2 + 2) * sizeof(char *));
 	tmp = malloc((len1 * len2 + 2) * sizeof(char *));
+	if (mul == NULL || c == NULL || tmp == NULL)
+    	{
+        	if (mul)
+			free(mul);
+		if (c)
+            		free(c);
+        	if (tmp)
+            		free(tmp);
+        	return (NULL);
+	}
 	for (i = len2; i >= 0; i--)
 	{
 		r = 0;

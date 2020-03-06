@@ -55,6 +55,8 @@ int main(int argc, char *argv[])
 	for (i = 0; res[i]; i++)
 		_putchar(res[i]);
 	_putchar('\n');
+	free(num1);
+	free(num2);
 	return (0);
 }
 /**
@@ -142,26 +144,28 @@ int *make_arr(char *s, int len)
 char *multi(int *num1, int len1, int *num2, int len2)
 {
 	char *mul;
-	char c[1000000];
-	char tmp[1000000];
+	char *c;
+	char *tmp;
 	int i, j, k = 0, x = 0, y;
 	long int r = 0;
 	unsigned long sum = 0;
 
-	mul = malloc(1000000 * sizeof(char));
+	mul = malloc((len1 + len2 + 2) * sizeof(char *));
+	c = malloc((len1 + len2 + 2) * sizeof(char *));
+	tmp = malloc((len1 * len2 + 2) * sizeof(char *));
 	for (i = len2; i >= 0; i--)
 	{
 		r = 0;
-		for (j = len1; j >= 0; j--)
+		for (j = len1; j >= 0; j--, k++)
 		{
-			tmp[k++] = (num2[i] * num1[j] + r) % 10;
+			tmp[k] = (num2[i] * num1[j] + r) % 10;
 			r = (num2[i] * num1[j] + r) / 10;
 		}
 		tmp[k++] = r;
 		x++;
-		for (y = 0; y < x; y++)
+		for (y = 0; y < x; y++, k++)
 		{
-			tmp[k++] = 0;
+			tmp[k] = 0;
 		}
 	}
 	k = 0;
@@ -186,6 +190,8 @@ char *multi(int *num1, int len1, int *num2, int len2)
 		mul[j++] = c[i] + '0';
 	}
 	mul[j] = '\0';
+	free(c);
+	free(tmp);
 	return (mul);
 }
 /**

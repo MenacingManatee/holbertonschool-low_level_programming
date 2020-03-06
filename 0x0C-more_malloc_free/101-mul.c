@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char *multi(int *num1, int len1, int *num2, int len2);
 int _strlen(char *a);
-int _atoi(char *s);
+unsigned long _atoi(char *s);
+int *make_arr(char *s, int len);
 /**
  * main - multiplies two numbers
  * @argc: amount of arguments, including filename
@@ -11,8 +13,10 @@ int _atoi(char *s);
  */
 int main(int argc, char *argv[])
 {
-	int i, j, len1, len2, multi = 1, multi2 = 1;
-	unsigned long num1, num2;
+	int i, j, len1, len2;
+	int *num1;
+	int *num2;
+	char *res;
 
 	if (argc != 3)
 	{
@@ -30,19 +34,18 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
-	len1 = _strlen(argv[1]);
-	for (i = 0; i < len1; i++)
-	{
-		multi *= 10;
-	}
-	len2 = _strlen(argv[2]);
-	for (i = 0; i < len2; i++)
-	{
-		multi2 *= 10;
-	}
-	num1 = _atoi(argv[1]);
-	num2 = _atoi(argv[2]);
-	printf("%lu\n", num1 * num2);
+	len1 = _strlen(argv[1]) - 1;
+	len2 = _strlen(argv[2]) - 1;
+	num1 = malloc(len1 * sizeof(int));
+	num2 = malloc(len2 * sizeof(int));
+	if (num1 == NULL || num2 == NULL)
+		exit (98);
+	num1 = make_arr(argv[1], len1);
+	num2 = make_arr(argv[2], len2);
+	res = multi(num1, len1, num2, len2);
+	while (*res == '0')
+		res++;
+	printf("%s\n", res);
 	return (0);
 }
 /**
@@ -50,7 +53,7 @@ int main(int argc, char *argv[])
  *@s: string to be converted
  * Return: the number after conversion, or 0
  */
-int _atoi(char *s)
+unsigned long _atoi(char *s)
 {
 	int i = 0, j, n1, n2, neg = 1, flag = 0;
 	int sum = 0;
@@ -99,4 +102,80 @@ int _strlen(char *a)
 	while (a[i])
 		i++;
 	return (i);
+}
+/**
+ * make_arr - makes an integer array from a string of ints
+ * @s: character string
+ * @len: length of the string
+ *
+ * Return: integer array of the string
+ */
+int *make_arr(char *s, int len)
+{
+	int *res;
+
+	res = malloc(len * sizeof(int));
+	for (; s[len]; len--)
+	{
+		res[len] = (s[len] - '0');
+	}
+	return (res);
+}
+/**
+ * multi - multiplies two integer arrays
+ * @num1: number 1
+ * @num2: number 2
+ * @len1: length of array num1
+ * @len2: length of array num2
+ *
+ * Return: string of their multiplication
+ */
+char *multi(int *num1, int len1, int *num2, int len2)
+{
+	char *mul;
+	char c[1000000];
+	char tmp[1000000];
+	int i, j, k = 0, x = 0, y;
+	long int r = 0;
+	unsigned long sum = 0;
+
+	mul = malloc(1000000 * sizeof(char));
+	for (i = len2; i >= 0; i--)
+	{
+		r = 0;
+		for (j = len1; j >= 0; j--)
+		{
+			tmp[k++] = (num2[i] * num1[j] + r) % 10;
+			r = (num2[i] * num1[j] + r) / 10;
+		}
+		tmp[k++] = r;
+		x++;
+		for (y = 0; y < x; y++)
+		{
+			tmp[k++] = 0;
+		}
+	}
+	k = 0;
+	r = 0;
+	for (i = 0; i < len1 + len2 + 2; i++)
+	{
+		sum = 0;
+		y = 0;
+		for (j = 1; j <= len2 + 1; j++)
+		{
+			if (i <= len1 + j)
+				sum += tmp[y + i];
+			y += j + len1 + 1;
+		}
+		c[k++] = (sum + r) % 10;
+		r = (sum + r) / 10;
+	}
+	c[k] = r;
+	j = 0;
+	for (i = k - 1; i >= 0; i--)
+	{
+		mul[j++] = c[i] + '0';
+	}
+	mul[j] = '\0';
+	return (mul);
 }

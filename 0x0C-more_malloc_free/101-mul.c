@@ -1,6 +1,7 @@
-#include <stdio.h>
+#include "holberton.h"
 #include <stdlib.h>
 
+void print_err(char *s);
 char *multi(int *num1, int len1, int *num2, int len2);
 int _strlen(char *a);
 unsigned long _atoi(char *s);
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		printf("Error\n");
+		print_err("Error");
 		exit(98);
 	}
 	for (i = 1; i < argc; i++)
@@ -29,15 +30,15 @@ int main(int argc, char *argv[])
 		{
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
-				printf("Error\n");
+				print_err("Error");
 				exit(98);
 			}
 		}
 	}
 	if (_atoi(argv[1]) == 0 || _atoi(argv[2]) == 0)
 	{
-		putchar('0');
-		putchar('\n');
+		_putchar('0');
+		_putchar('\n');
 		return (0);
 	}
 	len1 = _strlen(argv[1]) - 1;
@@ -45,13 +46,15 @@ int main(int argc, char *argv[])
 	num1 = malloc(len1 * sizeof(int));
 	num2 = malloc(len2 * sizeof(int));
 	if (num1 == NULL || num2 == NULL)
-		exit(98);
+		return (1);
 	num1 = make_arr(argv[1], len1);
 	num2 = make_arr(argv[2], len2);
 	res = multi(num1, len1, num2, len2);
 	while (*res == '0')
 		res++;
-	printf("%s\n", res);
+	for (i = 0; res[i]; i++)
+		_putchar(res[i]);
+	_putchar('\n');
 	return (0);
 }
 /**
@@ -184,4 +187,19 @@ char *multi(int *num1, int len1, int *num2, int len2)
 	}
 	mul[j] = '\0';
 	return (mul);
+}
+/**
+ * print_err - prints "Error" followed by a newline
+ * @s: Error message to print
+ * Return: void
+ */
+void print_err(char *s)
+{
+	int i;
+
+	for (i = 0; s[i]; i++)
+	{
+		_putchar(s[i]);
+	}
+	_putchar('\n');
 }

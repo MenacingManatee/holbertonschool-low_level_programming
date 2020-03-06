@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	num1 = malloc(len1 * sizeof(int));
 	num2 = malloc(len2 * sizeof(int));
 	if (num1 == NULL || num2 == NULL)
-		exit (98);
+		exit(98);
 	num1 = make_arr(argv[1], len1);
 	num2 = make_arr(argv[2], len2);
 	res = multi(num1, len1, num2, len2);

@@ -34,6 +34,12 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
+	if (_atoi(argv[1]) == 0 || _atoi(argv[2]) == 0)
+	{
+		putchar('0');
+		putchar('\n');
+		return (0);
+	}
 	len1 = _strlen(argv[1]) - 1;
 	len2 = _strlen(argv[2]) - 1;
 	num1 = malloc(len1 * sizeof(int));

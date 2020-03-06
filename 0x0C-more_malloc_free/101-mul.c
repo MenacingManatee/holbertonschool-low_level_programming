@@ -12,7 +12,7 @@ int _atoi(char *s);
 int main(int argc, char *argv[])
 {
 	int i, j, len1, len2, multi = 1, multi2 = 1;
-	unsigned long num1, num2, res;
+	unsigned long num1, num2;
 
 	if (argc != 3)
 	{
@@ -42,8 +42,7 @@ int main(int argc, char *argv[])
 	}
 	num1 = _atoi(argv[1]);
 	num2 = _atoi(argv[2]);
-	res = num1 * num2;
-	printf("%lu\n", res);
+	printf("%lu\n", num1 * num2);
 	return (0);
 }
 /**

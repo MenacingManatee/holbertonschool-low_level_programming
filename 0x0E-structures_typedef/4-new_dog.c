@@ -15,11 +15,24 @@ void _strcpy(char *dest, char *src);
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *mydog = malloc(sizeof(dog_t));
-	char *tmpname = malloc((_strlen(name) + 1) * sizeof(char));
-	char *tmpowner = malloc((_strlen(owner) + 1) * sizeof(char));
+	char *tmpname;
+	char *tmpowner;
 
-	if (mydog == NULL || tmpname == NULL || tmpowner == NULL)
+	if (mydog == NULL)
 		return (NULL);
+	tmpname = malloc((_strlen(name) + 1) * sizeof(char));
+	if (tmpname == NULL)
+	{
+		free(mydog);
+		return (NULL);
+	}
+	tmpowner = malloc((_strlen(owner) + 1) * sizeof(char));
+	if (tmpowner == NULL)
+	{
+		free(tmpname);
+		free(mydog);
+		return (NULL);
+	}
 	_strcpy(tmpname, name);
 	_strcpy(tmpowner, owner);
 	(*mydog).name = tmpname;

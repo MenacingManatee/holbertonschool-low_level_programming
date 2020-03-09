@@ -22,7 +22,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	_strcpy(tmpname, name);
 	_strcpy(tmpowner, owner);
-	printf("%s\n%s\n", tmpname, tmpowner);
 	(*mydog).name = tmpname;
 	(*mydog).age = age;
 	(*mydog).owner = tmpowner;

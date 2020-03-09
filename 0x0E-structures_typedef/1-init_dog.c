@@ -1,12 +1,16 @@
-#include <stdio.h>
+#include "dog.h"
 
 /**
- * main - 
- *
- * Return: Always 0 (ok)
+ * init_dog - initializes a variable of type struct dog
+ * @d: dog structure
+ * @name: dog name
+ * @age: dog age
+ * @owner: Dog owner
+ * Return: void
  */
-int main(void)
+void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	
-	return (0);
+	(*d).name = name;
+	(*d).age = age;
+	(*d).owner = owner;
 }

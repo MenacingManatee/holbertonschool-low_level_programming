@@ -1,12 +1,15 @@
-#include <stdio.h>
+#include <stdlib.h>
+#include "dog.h"
 
 /**
- * main - 
+ * free_dog - frees dogs
+ * @d: dog_t struct to free
  *
- * Return: Always 0 (ok)
+ * Return: void
  */
-int main(void)
+void free_dog(dog_t *d)
 {
-	
-	return (0);
+	free((*d).name);
+	free((*d).owner);
+	free(d);
 }

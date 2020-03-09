@@ -1,12 +1,22 @@
-#include <stdio.h>
+#include <stdlib.h>
+#include "dog.h"
 
 /**
- * main - 
+ * new_dog - creates a new dog
+ * @name: dog name
+ * @age: dog ag4e
+ * @owner: dog owner
  *
- * Return: Always 0 (ok)
+ * Return: Pointer to a dog_t struct
  */
-int main(void)
+dog_t *new_dog(char *name, float age, char *owner)
 {
-	
-	return (0);
+	struct dog *mydog = malloc(sizeof(mydog));
+
+	if (mydog == NULL)
+		return NULL;
+	(*mydog).name = name;
+	(*mydog).age = age;
+	(*mydog).owner = owner;
+	return (mydog);
 }

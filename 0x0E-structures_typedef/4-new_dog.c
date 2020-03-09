@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "dog.h"
 
 int _strlen(char *s);
@@ -13,14 +14,15 @@ void _strcpy(char *dest, char *src);
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog *mydog = malloc(sizeof(mydog));
-	char *tmpname = malloc(_strlen(name) * sizeof(char));
-	char *tmpowner = malloc(_strlen(owner) * sizeof(char));
+	dog_t *mydog = malloc(sizeof(dog_t));
+	char *tmpname = malloc((_strlen(name) + 1) * sizeof(char));
+	char *tmpowner = malloc((_strlen(owner) + 1) * sizeof(char));
 
+	if (mydog == NULL || tmpname == NULL || tmpowner == NULL)
+		return (NULL);
 	_strcpy(tmpname, name);
 	_strcpy(tmpowner, owner);
-	if (mydog == NULL)
-		return (NULL);
+	printf("%s\n%s\n", tmpname, tmpowner);
 	(*mydog).name = tmpname;
 	(*mydog).age = age;
 	(*mydog).owner = tmpowner;

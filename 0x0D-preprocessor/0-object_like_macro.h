@@ -1,12 +1,3 @@
-#include <stdio.h>
-
-/**
- * main - 
- *
- * Return: Always 0 (ok)
- */
-int main(void)
-{
-	
-	return (0);
-}
+#ifndef SIZE
+#define SIZE 1024
+#endif

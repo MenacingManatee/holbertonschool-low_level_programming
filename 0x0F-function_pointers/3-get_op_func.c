@@ -8,22 +8,22 @@
  */
 int (*get_op_func(char *s))(int, int);
 {
-	if (s == '/' || s == '+' || s == '%' ||s == '-'
-	    || s == '*')
+	op_t ops[] = {
+		{"+", op_add},
+		{"-", op_sub},
+		{"*", op_mul},
+		{"/", op_div},
+		{"%", op_mod},
+		{NULL, NULL}
+	};
+	int i;
+
+	while (ops[i].op != NULL)
 	{
-		if (s == '+')
-			return (&op_add);
-		else if (s == '-')
-			return (&op_sub);
-		else if (s == '/')
-			return (&op_div);
-		else if (s == '%')
-			return (&op_mod);
-		else
-			return (&op_mul);
+		if (!(strcmp(ops[i].op, s)))
+			break;
+		i++;
 	}
-	else
-	{
-		return (NULL);
-	}
+
+	return (ops[i].f);
 }

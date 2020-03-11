@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
 	int bytes;
-	long i;
+	long i = 0;
 	unsigned int j = 256;
 
 	if (argc != 2)
@@ -32,8 +32,8 @@ int main(int argc, char *argv[])
 			putchar('0');
 		printf("%x ", *((char *)(&main + i)) % j);
 	}
-	if (*((char *)(&main + (i + 1))) % j < 16)
+	if (*((char *)(&main + (i))) % j < 16)
 		putchar('0');
-	printf("%x\n", *((char *)(&main + (i + 1))) % j);
+	printf("%x\n", *((char *)(&main + (i))) % j);
 	return (0);
 }

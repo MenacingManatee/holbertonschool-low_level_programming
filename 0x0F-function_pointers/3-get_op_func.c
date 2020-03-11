@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include "3-calc.h"
+#include <string.h>
+
 /**
  * get_op_func - returns the address to the correct function based on operator s
  * @s: argv[2], should be an operator
  *
  * Return: Address of correct function, or NULL
  */
-int (*get_op_func(char *s))(int, int);
+int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},

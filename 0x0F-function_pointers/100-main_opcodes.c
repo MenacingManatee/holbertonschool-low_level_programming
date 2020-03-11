@@ -3,6 +3,8 @@
 
 /**
  * main - prints the operation codes of its own function
+ * @argc: argument count
+ * @argv: argument vector
  *
  * Return: Always 0 (ok)
  */
@@ -26,11 +28,11 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < bytes - 1; i++)
 	{
-		if (*((char *)(&main + i)) % j < 10)
+		if (*((char *)(&main + i)) % j < 16)
 			putchar('0');
 		printf("%x ", *((char *)(&main + i)) % j);
 	}
-	if (*((char *)(&main + (i + 1))) % j < 10)
+	if (*((char *)(&main + (i + 1))) % j < 16)
 		putchar('0');
 	printf("%x\n", *((char *)(&main + (i + 1))) % j);
 	return (0);

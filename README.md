@@ -24,3 +24,8 @@ This repo includes all (to date) repositories utilizing low level languages in p
 |0x08: C-Recursion|Introduction to using recursion in place of loops|
 |0x09: C-Static Libraries|Introduction to the creation and uses of static libraries|
 |0x0A: C-argc, argv|Introduction to sending arguments to main function|
+|0x0B: malloc, free|Introduction to the usage of malloc and free|
+|0x0C: More malloc, free|More in-depth usage of malloc, including recreations of calloc and realloc|
+|0x0D: Preprocessor|A look at various ways to utilize the preprocesor, namely object-like and function-like macros, as well as a bit of preprocessor abuse|
+|0x0E: Structures, typedef|Introduction into the creation and utilization of structures, and how to declare a type using typedef|
+|0x0F: Function Pointers|First look at pointers that contain the address of a function|

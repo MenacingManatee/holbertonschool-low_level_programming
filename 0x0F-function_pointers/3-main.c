@@ -13,22 +13,22 @@ int main(int argc, char *argv[])
 {
 	int (*op)(int, int) = get_op_func(argv[2]);
 
-	if (argc != 4 || op == NULL || argv == NULL)
+	if (argc != 4 || argv == NULL)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if ((!(strcmp(argv[2], "%")) || !(strcmp(argv[2], "/"))) &&
-	    (atoi(argv[3]) == 0))
+	if (op == NULL || ((!(strcmp(argv[2], "%")) ||
+			    !(strcmp(argv[2], "/"))) && (atoi(argv[3]) == 0)))
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 	if ((atoi(argv[1]) == 0 && argv[1][0] != '0') || (atoi(argv[3]) == 0 &&
 							  argv[3][0] != '0'))
 	{
 		printf("Error\n");
-		exit(98);
+		exit(100);
 	}
 	printf("%d\n", (*op)(atoi(argv[1]), atoi(argv[3])));
 	return (0);

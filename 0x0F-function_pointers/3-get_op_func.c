@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
- * get_op_func - returns the address to the correct function based on operator s
+ * get_op_func - returns the address to the correct function based on operator
  * @s: argv[2], should be an operator
  *
  * Return: Address of correct function, or NULL

@@ -14,7 +14,7 @@ int sum_them_all(const unsigned int n, ...)
 	unsigned int i;
 	va_list a_list;
 
-	va_start( a_list, n );
+	va_start(a_list, n);
 	if (n == 0)
 	{
 		va_end(a_list);
@@ -24,6 +24,6 @@ int sum_them_all(const unsigned int n, ...)
 	{
 		b += va_arg(a_list, int);
 	}
-	va_end (a_list);
+	va_end(a_list);
 	return (b);
 }

@@ -40,9 +40,8 @@ void print_all(const char * const format, ...)
 		{
 			tmp = va_arg(args, char *);
 			if (tmp == NULL)
-				printf("(nil)");
-			else
-				printf("%s", tmp);
+				tmp = "(nil)";
+			printf("%s", tmp);
 			break;
 		}
 		default:
@@ -51,10 +50,12 @@ void print_all(const char * const format, ...)
 			continue;
 		}
 		}
-		if (i < len - 1)
-			printf(", ");
-		else
+		if (i == len - 1)
+		{
 			printf("\n");
+			break;
+		}
+		printf(", ");
 		i++;
 	}
 	va_end(args);

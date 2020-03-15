@@ -13,9 +13,16 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	unsigned int i = 0;
-	unsigned int len = _strlen(format);
+	unsigned int len;
 	char *tmp;
+	char *sep = "";
 
+	if (format == NULL)
+	{
+		printf("\n");
+		return;
+	}
+	len = _strlen(format);
 	va_start(args, format);
 	while (i < len)
 	{
@@ -23,17 +30,17 @@ void print_all(const char * const format, ...)
 		{
 		case 'c':
 		{
-			printf("%c", va_arg(args, int));
+			printf("%s, %c", sep, va_arg(args, int));
 			break;
 		}
 		case 'i':
 		{
-			printf("%d", va_arg(args, int));
+			printf("%s, %d", sep, va_arg(args, int));
 			break;
 		}
 		case 'f':
 		{
-			printf("%f", va_arg(args, double));
+			printf("%s, %f", sep, va_arg(args, double));
 			break;
 		}
 		case 's':
@@ -41,7 +48,7 @@ void print_all(const char * const format, ...)
 			tmp = va_arg(args, char *);
 			if (tmp == NULL)
 				tmp = "(nil)";
-			printf("%s", tmp);
+			printf("%s, %s", sep, tmp);
 			break;
 		}
 		default:
@@ -50,14 +57,10 @@ void print_all(const char * const format, ...)
 			continue;
 		}
 		}
-		if (i == len - 1)
-		{
-			printf("\n");
-			break;
-		}
-		printf(", ");
+		sep = ", ";
 		i++;
 	}
+	printf("\n");
 	va_end(args);
 }
 /**
@@ -71,6 +74,9 @@ int _strlen(const char * const s)
 	int len = 0;
 
 	while (s[len])
+	{
 		len++;
+		printf("%d\n", len);
+	}
 	return (len);
 }

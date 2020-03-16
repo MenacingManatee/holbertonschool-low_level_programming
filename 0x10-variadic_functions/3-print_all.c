@@ -13,18 +13,17 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	unsigned int i = 0;
-	unsigned int len;
 	char *tmp;
 	char *sep = "";
 
+	va_start(args, format);
 	if (format == NULL)
 	{
 		printf("\n");
 		return;
 	}
-	len = _strlen(format);
-	va_start(args, format);
-	while (i < len)
+
+	while (format[i])
 	{
 		switch (format[i])
 		{
@@ -62,21 +61,4 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n");
 	va_end(args);
-}
-/**
- * _strlen - finds the length fo string s
- * @s: target string
- *
- * Return: length of s
- */
-int _strlen(const char * const s)
-{
-	int len = 0;
-
-	while (s[len])
-	{
-		len++;
-		printf("%d\n", len);
-	}
-	return (len);
 }

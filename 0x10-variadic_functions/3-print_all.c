@@ -2,7 +2,6 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 
-int _strlen(const char * const s);
 /**
  * print_all - prints all arguments, seperated by char *separator
  * @format: list of all types of arguments
@@ -22,24 +21,23 @@ void print_all(const char * const format, ...)
 		printf("\n");
 		return;
 	}
-
-	while (format[i])
+	while (format[i] != '\0')
 	{
 		switch (format[i])
 		{
 		case 'c':
 		{
-			printf("%s, %c", sep, va_arg(args, int));
+			printf("%s%c", sep, va_arg(args, int));
 			break;
 		}
 		case 'i':
 		{
-			printf("%s, %d", sep, va_arg(args, int));
+			printf("%s%d", sep, va_arg(args, int));
 			break;
 		}
 		case 'f':
 		{
-			printf("%s, %f", sep, va_arg(args, double));
+			printf("%s%f", sep, va_arg(args, double));
 			break;
 		}
 		case 's':
@@ -47,7 +45,7 @@ void print_all(const char * const format, ...)
 			tmp = va_arg(args, char *);
 			if (tmp == NULL)
 				tmp = "(nil)";
-			printf("%s, %s", sep, tmp);
+			printf("%s%s", sep, tmp);
 			break;
 		}
 		default:

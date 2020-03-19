@@ -1,12 +1,19 @@
 #include <stdio.h>
+#include "lists.h"
 
 /**
- * main - 
+ * list_len - prints the lenght of a singly linked list
+ * @h: singly linked list
  *
- * Return: Always 0 (ok)
+ * Return: the number of nodes
  */
-int main(void)
+size_t list_len(const list_t *h)
 {
-	
-	return (0);
+	size_t i = 0;
+
+	for (; h->next != 0; i++)
+	{
+		h = h->next;
+	}
+	return (++i);
 }

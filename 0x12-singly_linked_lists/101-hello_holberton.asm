@@ -1,18 +1,18 @@
 section .data
-msg:	db "Hello, Holberton",0
-fmt:	db "%s",10,0
+msg:	db "Hello, Holberton",10
+len:	equ $-msg
 
 section .text
 	global main
-	extern printf
 
 main:
 _start:
-	mov esi, msg
-	mov edi, fmt
-	mov eax, 0
-	call printf
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, msg
+	mov rdx, len
+	syscall
 
-	mov ebx, 0
-	mov eax, 1
-	int 0x80
+	mov rax, 60
+	mov rdi, rdi
+	syscall

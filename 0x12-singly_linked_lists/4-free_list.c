@@ -1,12 +1,27 @@
 #include <stdio.h>
+#include "lists.h"
+#include <stdlib.h>
 
 /**
- * main - 
+ * free_list - frees a list_t list.
+ * @head: list to free
  *
- * Return: Always 0 (ok)
+ * Return: void
  */
-int main(void)
+void free_list(list_t *head)
 {
-	
-	return (0);
+	list_t *tmp;
+	int i = 0;
+
+	if (head == NULL)
+		return;
+	for (; head->next != NULL; i++)
+	{
+		tmp = head->next;
+		free(head->str);
+		free(head);
+		head = tmp;
+	}
+	free(head->str);
+	free(head);
 }

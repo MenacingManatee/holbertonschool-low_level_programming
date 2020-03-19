@@ -1,12 +1,14 @@
 #include <stdio.h>
 
 /**
- * main - 
+ * startup_c - Prints a string before main is executed
  *
- * Return: Always 0 (ok)
+ * Return: void
  */
-int main(void)
+void startup_c(void) __attribute__((constructor));
+
+void startup_c(void)
 {
-	
-	return (0);
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }

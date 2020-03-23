@@ -1,4 +1,4 @@
-#include "lists.h"
+B#include "lists.h"
 
 /**
  * free_listint - frees a linked list
@@ -15,7 +15,8 @@ void free_listint(listint_t *head)
 
 	for (; head->next != NULL; i++)
 	{
-		tmp = head->next;free(head);
+		tmp = head->next;
+		free(head);
 		head = tmp;
 	}
 	free(head);

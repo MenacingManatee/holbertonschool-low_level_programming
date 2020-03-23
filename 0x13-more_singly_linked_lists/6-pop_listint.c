@@ -1,12 +1,21 @@
-#include <stdio.h>
+#include "lists.h"
 
 /**
- * main - 
+ * pop_listint - deletes head node and returns its data
+ * @head: list to pop
  *
- * Return: Always 0 (ok)
+ * Return: Contents of popped node
  */
-int main(void)
+int pop_listint(listint_t **head)
 {
-	
-	return (0);
+	int n;
+	listint_t *tmp = *head;
+
+	if (*head == NULL)
+		return (0);
+	n = (*head)->n;
+	tmp = (*head)->next;
+	free(*head);
+	*head = tmp;
+	return (n);
 }

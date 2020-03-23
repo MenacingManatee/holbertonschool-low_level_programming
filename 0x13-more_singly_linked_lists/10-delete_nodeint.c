@@ -1,9 +1,9 @@
-#include "lists.h"
+B#include "lists.h"
 
 /**
  * delete_nodeint_at_index - deletes a node at index idx
  * @head: head of list
- * @idx: index to insert node
+ * @index: index to insert node
  *
  * Return: Address of new node, or NULL
  */

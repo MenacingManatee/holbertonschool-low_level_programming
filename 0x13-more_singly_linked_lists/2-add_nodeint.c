@@ -1,12 +1,23 @@
-#include <stdio.h>
+#include "lists.h"
 
 /**
- * main - 
+ * add_nodeint - adds a node to the front of a list
+ * @head: the list head
+ * @n: int to be duplicated into the list
  *
- * Return: Always 0 (ok)
+ * Return: Address of new element, or NULL
  */
-int main(void)
+listint_t *add_nodeint(listint_t **head, const int n)
 {
-	
-	return (0);
+	listint_t *new;
+
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+	{
+		return (NULL);
+	}
+	new->n = n;
+	new->next = *head;
+	*head = new;
+	return (new);
 }

@@ -1,12 +1,22 @@
-#include <stdio.h>
+#include "lists.h"
 
 /**
- * main - 
+ * get_nodeint_at_index
+ * @head: head of linked list
+ * @index: node index to return
  *
- * Return: Always 0 (ok)
+ * Return: Node at index index
  */
-int main(void)
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	
-	return (0);
+	listint_t *tmp = head;
+	unsigned int i = 0;
+
+	if (head == NULL)
+		return (NULL);
+	for (; i < index; i++)
+	{
+		tmp = tmp->next;
+	}
+	return (tmp);
 }

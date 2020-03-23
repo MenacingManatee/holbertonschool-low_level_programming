@@ -1,12 +1,19 @@
-#include <stdio.h>
+#include "lists.h"
 
 /**
- * main - 
+ * sum_listint - finds the sum of all int contained in a list
+ * @head: List to sum
  *
- * Return: Always 0 (ok)
+ * Return: Sum of list
  */
-int main(void)
+int sum_listint(listint_t *head)
 {
-	
-	return (0);
+	int sum = 0;
+	listint_t *tmp = head;
+
+	if (head == NULL)
+		return (sum);
+	for (; tmp; tmp = tmp->next)
+		sum += tmp->n;
+	return (sum);
 }

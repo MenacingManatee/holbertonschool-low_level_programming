@@ -3,7 +3,7 @@
 
 /**
  * free_listint_safe - prints a listint_t list, even if it loops
- * @head: list to free
+ * @h: list to free
  *
  * Return: Number of nodes
  */

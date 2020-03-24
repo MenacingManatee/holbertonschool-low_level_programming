@@ -3,6 +3,7 @@
 
 /**
  * reverse_listint - reverses a listint list
+ * @head: list to reverse
  *
  * Return: Pointer to new first node
  */

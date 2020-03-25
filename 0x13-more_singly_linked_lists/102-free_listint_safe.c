@@ -9,11 +9,12 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *curr = *h, *tmp;
+	listint_t *curr, *tmp;
 	int i = 0, j;
 
-	if (*h == NULL)
+	if (h == NULL || *h == NULL)
 		return (0);
+	curr = *h;
 	for (; *h; i++)
 	{
 		tmp = *h;

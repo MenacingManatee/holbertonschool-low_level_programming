@@ -20,7 +20,7 @@ size_t print_listint_safe(const listint_t *head)
 		check = head;
 		for (j = 0; j < i; j++)
 		{
-			if (check == curr)
+			if (check <= curr)
 			{
 				printf("-> [%p] %d\n", (void *)curr, curr->n);
 				return (i);

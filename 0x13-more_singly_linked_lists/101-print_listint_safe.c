@@ -17,20 +17,19 @@ size_t print_listint_safe(const listint_t *head)
 	curr = head;
 	while (curr)
 	{
-		i++;
 		check = head;
 		for (j = 0; j < i; j++)
 		{
-			if (check == curr->next)
+			if (check == curr)
 			{
-				printf("-> [%p] %d\n",
-				       (void *)curr->next, curr->next->n);
+				printf("-> [%p] %d\n", (void *)curr, curr->n);
 				return (i);
 			}
 			check = check->next;
 		}
 		printf("[%p] %d\n", (void *)curr, curr->n);
 		curr = curr->next;
+		i++;
 	}
 	return (i);
 }

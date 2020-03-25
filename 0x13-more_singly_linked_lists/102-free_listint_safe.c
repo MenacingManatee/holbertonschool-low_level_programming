@@ -9,27 +9,27 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *curr, *tmp;
+	listint_t *curr, *tmp, *start;
 	int i = 0, j;
 
 	if (h == NULL || *h == NULL)
 		return (0);
-	curr = *h;
+	curr = start = *h;
 	for (; *h; i++)
 	{
-		tmp = *h;
-		*h = (*h)->next;
-		free(tmp);
-		for (j = 0; j <= i; j++)
+		curr = start;
+		for (j = 0; j < i; j++)
 		{
-			if (*h == curr)
+			if (*h == curr && i > 0)
 			{
 				*h = NULL;
 				return (i);
 			}
 			curr = curr->next;
 		}
+		tmp = (*h)->next;
+		free(*h);
+		*h = tmp;
 	}
-	*h = NULL;
 	return (i);
 }

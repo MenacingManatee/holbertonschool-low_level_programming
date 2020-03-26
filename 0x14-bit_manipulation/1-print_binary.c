@@ -1,5 +1,6 @@
 #include "holberton.h"
-#include <stdio.h>
+#include <limits.h>
+
 /**
  * print_binary - takes an int and prints it in binary
  * @n: int to convert
@@ -10,6 +11,8 @@ void print_binary(unsigned long int n)
 	unsigned long int mask = 2147483648; /*1 then 31 0's*/
 	int flag = 0;
 
+	if (n > ULONG_MAX)
+		return (0);
 	while (mask > 0)
 	{
 		if (mask & n)

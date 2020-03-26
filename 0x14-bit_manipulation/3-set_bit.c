@@ -1,12 +1,18 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * set_bit - sets a bit at index of *n to 1
+ * @n: pointer to int to change bit of
+ * @index: index to shift
  *
- * Return: Always 0 (ok)
+ * Return: 1 on success -1 on failure
  */
-int main(void)
+int set_bit(unsigned long int *n, unsigned int index)
 {
-	
-	return (0);
+	unsigned long int mask = 1;
+
+	mask <<= index;
+	mask = mask | *n;
+	*n = mask;
+	return (1);
 }

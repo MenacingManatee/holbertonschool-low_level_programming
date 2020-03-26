@@ -1,4 +1,4 @@
-#include "holberton.h"
+B#include "holberton.h"
 
 /**
  * clear_bit - sets a bit at an index to 0
@@ -13,6 +13,6 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	if (n == NULL)
 		return (-1);
-	*n &= ~ (mask << index);
+	*n &= ~(mask << index);
 	return (1);
 }

@@ -1,12 +1,16 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * clear_bit - sets a bit at an index to 0
+ * @n: int to target
+ * @index: bit to clear
  *
- * Return: Always 0 (ok)
+ * Return: 1 on success, -1 on failure
  */
-int main(void)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
-	
-	return (0);
+	unsigned long mask = 1;
+
+	*n &= ~ (mask << index);
+	return (1);
 }

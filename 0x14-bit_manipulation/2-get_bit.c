@@ -1,12 +1,16 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
- * main - 
+ * get_bit - gets the bit at index index
+ * @n: num to check
+ * @index: bit to get
  *
- * Return: Always 0 (ok)
+ * Return: Value of the bit at index, or -1 on failure
  */
-int main(void)
+int get_bit(unsigned long int n, unsigned int index)
 {
-	
-	return (0);
+	unsigned long int mask = 1;
+
+	n >>= index;
+	return (n & mask);
 }

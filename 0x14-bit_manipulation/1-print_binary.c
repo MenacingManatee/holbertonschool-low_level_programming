@@ -1,4 +1,4 @@
-#include "holberton.h"
+B#include "holberton.h"
 #include <limits.h>
 
 /**
@@ -11,8 +11,6 @@ void print_binary(unsigned long int n)
 	unsigned long int mask = 2147483648; /*1 then 31 0's*/
 	int flag = 0;
 
-	if (n > ULONG_MAX)
-		return;
 	while (mask > 0)
 	{
 		if (mask & n)

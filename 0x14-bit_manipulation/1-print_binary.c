@@ -12,7 +12,7 @@ void print_binary(unsigned long int n)
 	int flag = 0;
 
 	if (n > ULONG_MAX)
-		return (0);
+		return;
 	while (mask > 0)
 	{
 		if (mask & n)

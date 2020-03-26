@@ -9,7 +9,7 @@ B#include "holberton.h"
  */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long mask = 1;
+	unsigned long int mask = 1;
 
 	if (n == NULL)
 		return (-1);

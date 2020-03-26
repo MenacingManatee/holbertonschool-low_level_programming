@@ -11,6 +11,8 @@ int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned long mask = 1;
 
+	if (n == NULL)
+		return (-1);
 	*n &= ~ (mask << index);
 	return (1);
 }

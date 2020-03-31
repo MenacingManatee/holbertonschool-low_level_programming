@@ -11,20 +11,25 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int filedesc, bufflen, tmp;
-	char buff[1024];
+	int filedesc, bufflen, tmp = 0, tmp_len = 0;
+	char *buff;
 
 	if (filename == NULL || letters == 0)
 		return (0);
 	filedesc = open(filename, O_RDONLY);
 	if (filedesc < 0)
 		return (0);
-	bufflen = read(filedesc, buff, letters);
+	buff = malloc(sizeof(char) * letters);
+	if (!buff)
+		return (0);
+	bufflen = read(filedesc, &buff[0], letters);
+	tmp_len += bufflen;
 	if (bufflen > 0)
 	{
-		tmp = write(1, buff, bufflen);
+		tmp += write(1, buff, bufflen);
 	}
-	if (tmp != bufflen)
+	if (tmp != tmp_len)
 		return (0);
+	close(filedesc);
 	return (bufflen);
 }

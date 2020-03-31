@@ -43,12 +43,14 @@ int main(int argc, char *argv[])
 		}
 	close_fr = close(fd_from);
 	close_to = close(fd_to);
-	if (close_fr < 0 || close_to < 0)
+	if (close_fr < 0)
 	{
-		if (close_fr < 0)
-			dprintf(STDERR_FILENO, ERR, fd_from);
-		if (close_to < 0)
-			dprintf(STDERR_FILENO, ERR, fd_to);
+		dprintf(STDERR_FILENO, ERR, fd_from);
+		exit(100);
+	}
+	if (close_to < 0)
+	{
+		dprintf(STDERR_FILENO, ERR, fd_to);
 		exit(100);
 	}
 	return (EXIT_SUCCESS);

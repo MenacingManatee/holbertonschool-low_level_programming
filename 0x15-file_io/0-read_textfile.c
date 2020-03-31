@@ -11,7 +11,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int filedesc, bufflen, tmp = 0;
+	int filedesc, bufflen;
 	char *buff;
 
 	if (filename == NULL || letters == 0)
@@ -23,9 +23,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buff)
 		return (0);
 	bufflen = read(filedesc, &buff[0], letters);
-	tmp = write(1, buff, bufflen);
-	if (tmp != bufflen)
-		return (0);
+	bufflen = write(1, buff, bufflen);
 	close(filedesc);
 	return (bufflen);
 }

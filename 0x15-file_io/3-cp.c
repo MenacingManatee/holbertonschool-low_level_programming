@@ -14,7 +14,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd_from, fd_to, bufflen = 1, close_fr, close_to;
+	int fd_from, fd_to, bufflen, close_fr, close_to;
 	char buff[1024];
 
 	if (argc != 3)
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	while ((bufflen = read(fd_from, buff, 1024)) > 0)
-		if (write(fd_to, buff, bufflen))
+		if (write(fd_to, buff, bufflen) != bufflen)
 		{
 			dprintf(STDERR_FILENO, NOWRITE, argv[2]);
 			exit(99);

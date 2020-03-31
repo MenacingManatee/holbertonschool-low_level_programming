@@ -23,7 +23,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buff)
 		return (0);
 	bufflen = read(filedesc, &buff[0], letters);
-	bufflen = write(1, buff, bufflen);
+	bufflen = write(STDOUT_FILENO, &buff[0], bufflen);
 	free(buff);
 	close(filedesc);
 	return (bufflen);

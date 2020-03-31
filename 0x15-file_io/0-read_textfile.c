@@ -3,7 +3,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 /**
- * read_textfile - reads a text file and prints it to the POSIX standard output.
+ * read_textfile - reads a text file and prints it to the POSIX stdout.
  * @filename: filename to look for
  * @letters: Number of letters to read/print
  *
@@ -11,7 +11,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int filedesc, bufflen;
+	int filedesc, bufflen, tmp;
 	char buff[2048];
 
 	if (filename == NULL || letters == 0)
@@ -19,9 +19,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	filedesc = open(filename, O_RDONLY);
 	if (filedesc < 0)
 		return (0);
-	if ((bufflen = read(filedesc, buff, letters)) > 0)
+	bufflen = read(filedesc, buff, letters);
+	if (bufflen > 0)
 	{
-		write(1, buff, bufflen);
+		tmp = write(1, buff, bufflen);
 	}
+	if (tmp != bufflen)
+		return (0);
 	return (bufflen);
 }

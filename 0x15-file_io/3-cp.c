@@ -2,16 +2,16 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <stdio.h>
-#define RWRWR (S_IRUSR | S_IWUSR |S_IRGRP | S_IWGRP | S_IROTH)
+#define RWRWR (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 
 /**
  * main - reads a text file and prints it to the POSIX stdout.
- * @filename: filename to look for
- * @letters: Number of letters to read/print
+ * @argc: Argument count
+ * @argv: Argument vector
  *
  * Return: Always 0
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, bufflen = 1, tmp;
 	char buff[1024];

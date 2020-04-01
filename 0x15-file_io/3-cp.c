@@ -29,10 +29,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, NOWRITE, argv[2]), exit(99);
 	while ((bufflen = read(fd_from, buff, 1024)) > 0)
 		if (write(fd_to, buff, bufflen) != bufflen)
-		{
-			dprintf(STDERR_FILENO, NOWRITE, argv[2]);
-			exit(99);
-		}
+			dprintf(STDERR_FILENO, NOWRITE, argv[2]), exit(99);
 	if (bufflen < 0)
 		dprintf(STDERR_FILENO, NOREAD, argv[1]), exit(98);
 	if ((close(fd_from)) < 0)

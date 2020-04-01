@@ -35,9 +35,9 @@ int main(int argc, char *argv[])
 		}
 	if (bufflen < 0)
 		dprintf(STDERR_FILENO, NOREAD, argv[1]), exit(98);
-	if ((close(fd_from)) > 0)
+	if ((close(fd_from)) < 0)
 		dprintf(STDERR_FILENO, ERR, fd_from), exit(100);
-	if ((close(fd_to)) > 0)
+	if ((close(fd_to)) < 0)
 		dprintf(STDERR_FILENO, ERR, fd_to), exit(100);
 	return (EXIT_SUCCESS);
 }

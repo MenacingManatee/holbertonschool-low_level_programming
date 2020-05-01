@@ -8,12 +8,11 @@ def is_palindrome(a):
 
 
 d = 0
-for i in range(999, 0, -1):
-    for j in range(999, 0, -1):
+e = 0
+for i in range(999, 100, -1):
+    for j in range(999, 100, -1):
         c = i * j
         d = is_palindrome(c)
-        if d == 1:
-            print("{}".format(c))
-            break;
-    if d == 1:
-        break;
+        if d == 1 and c > e:
+            e = c
+print("{}".format(e))

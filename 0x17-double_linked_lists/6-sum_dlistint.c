@@ -1,12 +1,23 @@
-#include <stdio.h>
+#include "lists.h"
 
 /**
- * main - 
+ * sum_dlistint - sums the sum of all the data of a dlistint_t linked list
+ * @head: a dlistint_t linked list.
  *
- * Return: Always 0 (ok)
+ * Return: the sum of all the data
  */
-int main(void)
+int sum_dlistint(dlistint_t *head)
 {
-	
-	return (0);
+	int sum = 0;
+
+	if (!head)/*Null check*/
+		return (0);
+	if (!(head->prev))/*make sure we're actually at the head*/
+	{
+		for (; head->prev; head = head->prev)
+			;
+	}
+	for (; head; head = head->next)
+		sum += head->n;
+	return (sum);
 }

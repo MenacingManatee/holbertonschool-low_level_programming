@@ -11,43 +11,42 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int i = 0;
-	dlistint_t *new = malloc(sizeof(dlistint_t)), *top, *next;
+	dlistint_t *new = malloc(sizeof(dlistint_t)), *top;
 
 	if (!new)/*malloc failure check*/
 		return (NULL);
-	if (!h || !*h)/*Null check*/
-	{
-		if (idx != 0 || !h)
-		{
-			free(new);
-			return (NULL);
-		}
-		else
-		{
-			*h = new;
-			new->next = NULL, new->prev = NULL;
-		}
-	}
+	new->prev = NULL;
 	new->n = n;
+	if (!h)
+	{
+		free(new);
+		return (NULL);
+	}
+	if (idx == 0)
+	{
+		new->next = (*h);
+		if (*h)
+			(*h)->prev = new;
+		*h = new;
+		return (new);
+	}
 	if (!*h && !((*h)->prev))/*make sure we're actually at the head*/
 	{
 		for (; (*h)->prev; (*h) = (*h)->prev)
 			;
 	}
 	top = *h;
-	for (; i < idx - 1 && (*h); i++, (*h) = (*h)->next)
-		;/*-1 to get the node before the one we need*/
+	for (; i < idx && (*h); i++, (*h) = (*h)->next)
+		;/*to get the node we need to insert after*/
 	if (!*h)
 	{
 		free(new);
 		return (NULL);
 	}
-	next = (*h)->next;
+	new->next = (*h)->next, new->prev = (*h);
+	if ((*h)->next)
+		(*h)->next->prev = new;
 	(*h)->next = new;
-	new->prev = *h;
-	new->next = next;
-	*h = next;
-	(*h)->prev = new;
 	*h = top;
 	return (new);
 }

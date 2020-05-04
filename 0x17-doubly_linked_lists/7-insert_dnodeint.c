@@ -36,10 +36,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			;
 	}
 	top = *h;
-	for (; i < idx && (*h); i++, (*h) = (*h)->next)
+	for (; i < idx - 1 && (*h) != NULL; i++, (*h) = (*h)->next)
 		;/*to get the node we need to insert after*/
-	if (!*h)
+	if (*h == NULL)
 	{
+		*h = top;
 		free(new);
 		return (NULL);
 	}

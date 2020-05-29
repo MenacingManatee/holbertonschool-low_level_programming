@@ -16,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int k, idx, i;
 	hash_node_t **head;
 
-	if (!ht || !key || key[0] == '\0')
+	if (!ht || !key || key[0] == '\0' || !value)
 		return (0);
 	k = hash_djb2((unsigned char *)key);
 	idx = k % ht->size;
@@ -42,7 +42,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 /**
  * create_node - creates a node
- *
+ * @key: the key.
+ * @value: the value associated with the key
  *
  * Return: The created node
  */
@@ -70,5 +71,6 @@ hash_node_t *create_node(const char *key, const char *value)
 		}
 		strcpy((node->value), value);
 	}
+	node->next = node;
 	return (node);
 }

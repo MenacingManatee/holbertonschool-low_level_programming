@@ -10,16 +10,15 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *res = calloc(1, sizeof(hash_table_t));
-	hash_node_t *head;
 
 	if (res == NULL)
 		return (NULL);
-	head = calloc(size, sizeof(hash_node_t));
-	if (head == NULL)
+	res->array = calloc(size, sizeof(hash_node_t));
+	if (res->array == NULL)
 	{
 		free(res);
 		return (NULL);
 	}
-	res->size = size, res->array = &head;
+	res->size = size;
 	return (res);
 }

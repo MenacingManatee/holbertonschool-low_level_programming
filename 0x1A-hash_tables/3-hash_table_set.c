@@ -67,6 +67,6 @@ hash_node_t *create_node(const char *key, const char *value)
 		}
 		strcpy((node->value), value);
 	}
-	node->next = node;
+	node->next = NULL;
 	return (node);
 }

@@ -29,6 +29,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
+		for (tmp = head[idx]; tmp->next != NULL; tmp = tmp->next)
+		{
+			if (!strcmp(tmp->key, key))
+			{
+				free(tmp->value);
+				tmp->value = strdup(value);
+				return (1);
+			}
+		}
 		tmp = create_node(key, value);
 		tmp->next = head[idx];
 		head[idx] = tmp;

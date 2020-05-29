@@ -11,7 +11,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *res = calloc(1, sizeof(hash_table_t));
 	hash_node_t *head;
-	unsigned long int i;
 
 	if (res == NULL)
 		return (NULL);

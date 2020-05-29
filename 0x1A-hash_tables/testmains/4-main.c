@@ -22,8 +22,11 @@ int main(void)
 	hash_table_set(ht, "Betty", "Holberton");
 	hash_table_set(ht, "98", "Battery Street");
 	hash_table_set(ht, "c", "isfun");
+	hash_table_set(ht, "redescribed", "will collide");
+	hash_table_set(ht, "urites", "collided");
+	hash_table_set(ht, "redescribed", "update");
 
-/*	value = hash_table_get(ht, "python");
+	value = hash_table_get(ht, "python");
 	printf("%s:%s\n", "python", value);
 	value = hash_table_get(ht, "Jennie");
 	printf("%s:%s\n", "Jennie", value);
@@ -36,8 +39,12 @@ int main(void)
 	value = hash_table_get(ht, "98");
 	printf("%s:%s\n", "98", value);
 	value = hash_table_get(ht, "c");
-	printf("%s:%s\n", "c", value);*/
+	printf("%s:%s\n", "c", value);
 	value = hash_table_get(ht, "javascript");
 	printf("%s:%s\n", "javascript", value);
+	value = hash_table_get(ht, "redescribed");
+	printf("%s:%s\n", "redescribed", value);
+	value = hash_table_get(ht, "urites");
+	printf("%s:%s\n", "urites", value);
 	return (EXIT_SUCCESS);
 }

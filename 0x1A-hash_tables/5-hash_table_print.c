@@ -20,12 +20,10 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		if (run[i])
 		{
-			if (flag == 1)
-				putchar(',');
 			for (tmp = run[i]; tmp != NULL; tmp = tmp->next)
 			{
 				if (flag == 1)
-					putchar(' ');
+					printf(", ");
 				printf("'%s': '%s'", tmp->key, tmp->value);
 				flag = 1;
 			}

@@ -11,30 +11,17 @@
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int k, i;
-	hash_node_t **tmp;
+	unsigned long int k;
+	hash_node_t **tmp, *check;
 
-	printf("Bugcheck\n");
 	k = hash_djb2((unsigned char *)key) % ht->size;
 	tmp = ht->array;
 
-	printf("%d\n", tmp[k] == NULL);
-	printf("Before if\n");
 	if (tmp[k] != NULL)
 	{
-		printf("Inside if: %s : %s\n", tmp[k]->key, tmp[k]->value);
-		if (tmp[k]->key != NULL)
+		for (check = tmp[k]; check != NULL; check = check->next)
 			if (!strcmp(key, tmp[k]->key))
 				return (tmp[k]->value);
-	}
-	printf("Before loop\n");
-	for (i = 0; i < ht->size; i++)
-	{
-		printf("%d\n", (int)i);
-		if (tmp[i] != NULL)
-			if (tmp[i]->key != NULL)
-				if (!strcmp(key, tmp[i]->key))
-					return (tmp[i]->value);
 	}
 	return (NULL);
 }

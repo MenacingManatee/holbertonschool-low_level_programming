@@ -13,8 +13,8 @@ hash_node_t *create_node(const char *key, const char *value);
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int k, idx, i;
-	hash_node_t **head;
+	unsigned long int k, idx;
+	hash_node_t **head, *tmp;
 
 	if (!ht || !key || key[0] == '\0' || !value)
 		return (0);
@@ -29,13 +29,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		for (i = 0; i < ht->size && head[i]; i++)
-			;
-		if (head[i])
-			return (0);
-		head[i] = create_node(key, value);
-		if (head[i] == NULL)
-			return (0);
+		tmp = create_node(key, value);
+		tmp->next = head[idx];
+		head[idx] = tmp;
 	}
 	return (1);
 }

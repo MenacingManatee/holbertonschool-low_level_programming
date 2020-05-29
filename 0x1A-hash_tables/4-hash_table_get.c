@@ -20,8 +20,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (tmp[k] != NULL)
 	{
 		for (check = tmp[k]; check != NULL; check = check->next)
-			if (!strcmp(key, tmp[k]->key))
-				return (tmp[k]->value);
+			if (!strcmp(key, check->key))
+				return (check->value);
 	}
 	return (NULL);
 }

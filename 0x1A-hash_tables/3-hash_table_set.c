@@ -29,7 +29,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		for (tmp = head[idx]; tmp->next != NULL; tmp = tmp->next)
+		for (tmp = head[idx]; tmp != NULL; tmp = tmp->next)
 		{
 			if (!strcmp(tmp->key, key))
 			{

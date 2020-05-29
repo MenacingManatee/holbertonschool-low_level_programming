@@ -11,14 +11,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *res = calloc(1, sizeof(hash_table_t));
 	hash_node_t *head;
+	unsigned long int i;
 
 	if (res == NULL)
 		return (NULL);
-	if (size == 0)
-	{
-		free(res);
-		return (NULL);
-	}
 	head = calloc(size, sizeof(hash_node_t));
 	if (head == NULL)
 	{

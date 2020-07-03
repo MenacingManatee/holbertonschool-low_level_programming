@@ -1,0 +1,11 @@
+TARGET = holberton
+
+all : main.c m.h holberton.c
+	gcc -c main.c holberton.c
+
+CC = gcc
+
+SRC : main.c holberton.c m.h
+
+clean :
+	rm main.o holberton.o

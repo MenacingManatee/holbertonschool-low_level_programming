@@ -1,0 +1,10 @@
+holberton : main.o holberton.o
+
+main.o : main.c m.h
+	gcc -c main.c
+
+holberton.o : holberton.c m.h
+	gcc -c holberton.c
+
+clean :
+	rm main.o holberton.o

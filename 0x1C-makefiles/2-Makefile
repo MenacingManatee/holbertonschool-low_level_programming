@@ -7,10 +7,3 @@ NAME = holberton
 
 all : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-main.o:
-
-holberton.o:
-
-clean :
-	rm main.o holberton.o

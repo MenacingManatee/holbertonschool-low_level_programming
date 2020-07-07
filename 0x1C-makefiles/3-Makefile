@@ -11,10 +11,10 @@ all : $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean :
-	$(RM) *~ holberton
+	$(RM) *~ $(NAME)
 
 oclean:
-	$(RM) main.o holberton.o
+	$(RM) $(OBJ)
 
 fclean : clean oclean
 

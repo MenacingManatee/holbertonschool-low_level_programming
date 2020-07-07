@@ -19,6 +19,10 @@ def island_perimeter(grid):
             elif pos == 1 and (xi == x - 1 or xi == 0 or yi == y - 1 or
                                yi == 0):
                 per += 1
+            if yi == 100:
+                break
+        if xi == 100:
+            break
     return per
 
 

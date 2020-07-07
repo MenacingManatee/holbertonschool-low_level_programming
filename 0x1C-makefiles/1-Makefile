@@ -1,9 +1,9 @@
 all : main.c m.h holberton.c
-	gcc main.c holberton.c -o holberton
+	$(CC) $(SRC) -o holberton
 
 CC = gcc
 
-SRC = main.c holberton.c m.h
+SRC = main.c holberton.c
 
 clean :
 	rm main.o holberton.o

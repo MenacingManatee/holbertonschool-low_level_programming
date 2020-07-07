@@ -13,8 +13,12 @@ def island_perimeter(grid):
 
     for xi in range(x):
         for yi in range(y):
-            if grid[xi][yi] == 0:
+            pos = grid[xi][yi]
+            if pos == 0:
                 per += per_count(x, y, xi, yi, grid)
+            elif pos == 1 and (xi == x - 1 or xi == 0 or yi == y - 1 or
+                               yi == 0):
+                per += 1
     return per
 
 
@@ -28,5 +32,5 @@ def per_count(x, y, x_ind, y_ind, grid):
     if y_ind != 0:
         count += grid[x_ind][y_ind - 1]
     if y_ind < y - 1:
-        count += grid[x_ind][y_ind - 1]
+        count += grid[x_ind][y_ind + 1]
     return count

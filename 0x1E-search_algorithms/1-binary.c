@@ -2,9 +2,9 @@
 
 /**
  * print_array - prints an array
- * @array - array to print
- * @i1 - start index
- * @i2 - end index
+ * @array: array to print
+ * @i1: start index
+ * @i2: end index
  *
  * Return: size of sub array
  */
@@ -20,9 +20,9 @@ int print_array(int *array, size_t i1, size_t i2)
 }
 /**
  * binary_search - searches for a value in a sorted array
- * @array - pointer to the first element of the array
- * @size - the number of elements in array
- * @value - the value to search for
+ * @array: pointer to the first element of the array
+ * @size: the number of elements in array
+ * @value: the value to search for
  *
  * Return: the index where value is located
  */
@@ -47,5 +47,7 @@ int binary_search(int *array, size_t size, int value)
 			i = i + ((end - i) / 2);
 		}
 	}
+	if (size == 1 && array[0] == value)
+		return (0);
 	return (-1);
 }

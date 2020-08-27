@@ -16,7 +16,7 @@ int linear(int *array, size_t start, size_t end, int value)
 
 	for (i = start; i <= end; i++)
 	{
-		printf("Value checked array [%d] = [%d]\n", (int)i, array[i]);
+		printf("Value checked array[%d] = [%d]\n", (int)i, array[i]);
 		if (array[i] == value)
 			return (i);
 	}

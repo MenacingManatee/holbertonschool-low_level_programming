@@ -29,3 +29,13 @@ This repo includes all (to date) repositories utilizing low level languages in p
 |0x0D: Preprocessor|A look at various ways to utilize the preprocesor, namely object-like and function-like macros, as well as a bit of preprocessor abuse|
 |0x0E: Structures, typedef|Introduction into the creation and utilization of structures, and how to declare a type using typedef|
 |0x0F: Function Pointers|First look at pointers that contain the address of a function|
+|0x10: Variadic Functions||
+|0x12: Singly Linked Lists||
+|0x13: More Singly Linked Lists||
+|0x14: Bit Manipulation||
+|0x15: File IO||
+|0x17: Doubly Linked Lists||
+|0x18: Dynamic Libraries||
+|0x1A: Hash Tables||
+|0x1C: Makefiles||
+|0x1E: Search Algorithms||

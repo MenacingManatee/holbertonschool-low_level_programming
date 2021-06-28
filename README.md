@@ -39,3 +39,6 @@ This repo includes all (to date) holberton school repositories utilizing low lev
 |0x1A: Hash Tables|Basic funtions to create and interact with hash tables|
 |0x1C: Makefiles|Introduction to Makefiles|
 |0x1E: Search Algorithms|Recreates various search algorithms with big O included|
+
+### About Me
+I am a student software engineer, currently studying at Holberton School. My interests are in VR and game development, and I'd like to create my own VR game company within the next 10 years. See more about me on my [LinkedIn](https://www.linkedin.com/in/brett-davis-132916155/)
